@@ -1,10 +1,3 @@
-//
-//  movie_pickerApp.swift
-//  movie-picker
-//
-//  Created by Harun Mert Gokcegoz on 02/04/2024.
-//
-
 import SwiftUI
 
 @main

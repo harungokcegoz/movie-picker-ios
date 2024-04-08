@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4A3DEB672BBC339A0004BECE /* movie_pickerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3DEB662BBC339A0004BECE /* movie_pickerApp.swift */; };
-		4A3DEB692BBC339A0004BECE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3DEB682BBC339A0004BECE /* ContentView.swift */; };
 		4A3DEB6B2BBC339C0004BECE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3DEB6A2BBC339C0004BECE /* Assets.xcassets */; };
 		4A3DEB6E2BBC339C0004BECE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3DEB6D2BBC339C0004BECE /* Preview Assets.xcassets */; };
 		4A3DEB782BBC339D0004BECE /* movie_pickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3DEB772BBC339D0004BECE /* movie_pickerTests.swift */; };
@@ -41,7 +40,6 @@
 /* Begin PBXFileReference section */
 		4A3DEB632BBC339A0004BECE /* movie-picker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "movie-picker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A3DEB662BBC339A0004BECE /* movie_pickerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movie_pickerApp.swift; sourceTree = "<group>"; };
-		4A3DEB682BBC339A0004BECE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4A3DEB6A2BBC339C0004BECE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A3DEB6D2BBC339C0004BECE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4A3DEB732BBC339D0004BECE /* movie-pickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "movie-pickerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,7 +106,6 @@
 				4A3DEB912BBC349B0004BECE /* ModelView */,
 				4A3DEB902BBC34920004BECE /* Model */,
 				4A3DEB662BBC339A0004BECE /* movie_pickerApp.swift */,
-				4A3DEB682BBC339A0004BECE /* ContentView.swift */,
 				4A3DEB6A2BBC339C0004BECE /* Assets.xcassets */,
 				4A3DEB6C2BBC339C0004BECE /* Preview Content */,
 			);
@@ -299,7 +296,6 @@
 				4A3DEB942BBC40660004BECE /* MovieModel.swift in Sources */,
 				4A3DEB9D2BBC49840004BECE /* MovieDetailsView.swift in Sources */,
 				4A3DEB992BBC47850004BECE /* MovieCardView.swift in Sources */,
-				4A3DEB692BBC339A0004BECE /* ContentView.swift in Sources */,
 				4A3DEB672BBC339A0004BECE /* movie_pickerApp.swift in Sources */,
 				4A3DEB962BBC410C0004BECE /* MovieModelView.swift in Sources */,
 				4A3DEB9B2BBC47AC0004BECE /* MovieListView.swift in Sources */,
