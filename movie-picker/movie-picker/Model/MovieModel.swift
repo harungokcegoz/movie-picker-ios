@@ -28,7 +28,7 @@ struct MovieResponse: Decodable {
     }
 }
 
-struct MovieModel: Identifiable, Decodable {
+struct MovieModel: Identifiable, Decodable, Encodable {
     var id: Int
     var title: String
     var overview: String
