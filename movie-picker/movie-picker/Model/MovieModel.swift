@@ -14,7 +14,7 @@
 //vote_average:6.611
 //vote_count:27
 
-struct MovieResponse: Decodable {
+struct MovieResponse: Decodable, Encodable {
     let page: Int
     let results: [MovieModel]
     let totalPages: Int

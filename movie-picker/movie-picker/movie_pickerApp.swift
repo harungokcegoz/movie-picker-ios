@@ -4,11 +4,12 @@ import SwiftUI
 struct movie_pickerApp: App {
     var body: some Scene {
         WindowGroup {
-            MovieListView(viewModel: MovieViewModel())
+            ContentView()
         }
     }
 }
 
 #Preview {
-    MovieListView(viewModel: MovieViewModel())
+    ContentView()
 }
+

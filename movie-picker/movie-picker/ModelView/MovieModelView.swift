@@ -11,20 +11,22 @@ private enum NetworkError: Error {
 class WebService {
     func downloadData(url: URL, headers: [String: String]) async throws -> [MovieModel]? {
         do {
-            var request = URLRequest(url: url)
-            request.httpMethod = "GET"
-            request.allHTTPHeaderFields = headers
+//            var request = URLRequest(url: url)
+//            request.httpMethod = "GET"
+//            request.allHTTPHeaderFields = headers
+//            
+//            let (data, response) = try await URLSession.shared.data(for: request)
+//            guard let httpResponse = response as? HTTPURLResponse else {
+//                throw NetworkError.badResponse
+//            }
+//            
+//            guard (200..<300).contains(httpResponse.statusCode) else {
+//                throw NetworkError.badStatus
+//            }
+            // Mock response
+//            let decodedResponse = try JSONDecoder().decode(MovieResponse.self, from: mockResponse)
             
-            let (data, response) = try await URLSession.shared.data(for: request)
-            guard let httpResponse = response as? HTTPURLResponse else {
-                throw NetworkError.badResponse
-            }
-            
-            guard (200..<300).contains(httpResponse.statusCode) else {
-                throw NetworkError.badStatus
-            }
-            
-            let decodedResponse = try JSONDecoder().decode(MovieResponse.self, from: data)
+            let decodedResponse = Bundle.main.decode(type: MovieResponse.self, from: "MockData.json")
             return decodedResponse.results
         } catch {
             print("Error: \(error)")
@@ -33,7 +35,35 @@ class WebService {
     }
 }
 
-
+extension Bundle {
+    func decode<T: Codable>(type: T.Type, from file: String) -> T {
+        
+        guard let url = self.url(forResource: file, withExtension: nil) else {
+            fatalError("No file named: \(file) in Bundle")
+        }
+        
+        guard let data = try? Data(contentsOf: url) else {
+            fatalError("Failed to load")
+        }
+        
+        let decoder = JSONDecoder()
+        
+        
+        do {
+            return try decoder.decode(T.self, from: data)
+        } catch DecodingError.keyNotFound(let key, let context) {
+            fatalError("Failed to decode \(file) from bundel, missing file '\(key.stringValue)' - \(context.debugDescription)")
+        } catch DecodingError.typeMismatch(_, let context) {
+            fatalError("Type mismatch context \(context.debugDescription)")
+        } catch DecodingError.valueNotFound(let type, let context) {
+            fatalError("Failed to decode \(type) - context: \(context.debugDescription)")
+        }  catch DecodingError.dataCorrupted(_) {
+            fatalError("Wrong JSON")
+        } catch {
+            fatalError("Filed to decode \(file) from bundle")
+        }
+    }
+}
 
 class MovieViewModel: ObservableObject {
     @Published var movies: [MovieModel] = []
@@ -56,5 +86,4 @@ class MovieViewModel: ObservableObject {
         }
     }
 }
-
 

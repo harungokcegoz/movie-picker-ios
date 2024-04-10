@@ -1,0 +1,378 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "https://image.tmdb.org/t/p/original/1stUIsjawROZxjiCMtqqXqgfZWC.jpg",
+      "genre_ids": [
+        12,
+        14
+      ],
+      "id": 672,
+      "original_language": "en",
+      "original_title": "Harry Potter and the Chamber of Secrets",
+      "overview": "Cars fly, trees fight back, and a mysterious house-elf comes to warn Harry Potter at the start of his second year at Hogwarts. Adventure and danger await when bloody writing on a wall announces: The Chamber Of Secrets Has Been Opened. To save Hogwarts will require all of Harry, Ron and Hermione’s magical abilities and courage.",
+      "popularity": 149.161,
+      "poster_path": "https://image.tmdb.org/t/p/original/sdEOH0992YZ0QSxgXNIGLq1ToUi.jpg",
+      "release_date": "2002-11-13",
+      "title": "Harry Potter and the Chamber of Secrets",
+      "video": false,
+      "vote_average": 7.72,
+      "vote_count": 21195
+    },
+    {
+      "adult": false,
+      "backdrop_path": "https://image.tmdb.org/t/p/original/hziiv14OpD73u9gAak4XDDfBKa2.jpg",
+      "genre_ids": [
+        12,
+        14
+      ],
+      "id": 671,
+      "original_language": "en",
+      "original_title": "Harry Potter and the Philosopher's Stone",
+      "overview": "Harry Potter has lived under the stairs at his aunt and uncle's house his whole life. But on his 11th birthday, he learns he's a powerful wizard—with a place waiting for him at the Hogwarts School of Witchcraft and Wizardry. As he learns to harness his newfound powers with the help of the school's kindly headmaster, Harry uncovers the truth about his parents' deaths—and about the villain who's to blame.",
+      "popularity": 170.646,
+      "poster_path": "https://image.tmdb.org/t/p/original/wuMc08IPKEatf9rnMNXvIDxqP4W.jpg",
+      "release_date": "2001-11-16",
+      "title": "Harry Potter and the Philosopher's Stone",
+      "video": false,
+      "vote_average": 7.914,
+      "vote_count": 26411
+    },
+    {
+      "adult": false,
+      "backdrop_path": "https://image.tmdb.org/t/p/original/obKmfNexgL4ZP5cAmzdL4KbHHYX.jpg",
+      "genre_ids": [
+        12,
+        14
+      ],
+      "id": 673,
+      "original_language": "en",
+      "original_title": "Harry Potter and the Prisoner of Azkaban",
+      "overview": "Year three at Hogwarts means new fun and challenges as Harry learns the delicate art of approaching a Hippogriff, transforming shape-shifting Boggarts into hilarity and even turning back time. But the term also brings danger: soul-sucking Dementors hover over the school, an ally of the accursed He-Who-Cannot-Be-Named lurks within the castle walls, and fearsome wizard Sirius Black escapes Azkaban. And Harry will confront them all.",
+      "popularity": 130.34,
+      "poster_path": "https://image.tmdb.org/t/p/original/aWxwnYoe8p2d2fcxOqtvAtJ72Rw.jpg",
+      "release_date": "2004-05-31",
+      "title": "Harry Potter and the Prisoner of Azkaban",
+      "video": false,
+      "vote_average": 8.016,
+      "vote_count": 20801
+    },
+    {
+      "adult": false,
+      "backdrop_path": "https://image.tmdb.org/t/p/original/AqLcLsGGTzAjm3pCCq0CZCQrp6m.jpg",
+      "genre_ids": [
+        12,
+        14
+      ],
+      "id": 12444,
+      "original_language": "en",
+      "original_title": "Harry Potter and the Deathly Hallows: Part 1",
+      "overview": "Harry, Ron and Hermione walk away from their last year at Hogwarts to find and destroy the remaining Horcruxes, putting an end to Voldemort's bid for immortality. But with Harry's beloved Dumbledore dead and Voldemort's unscrupulous Death Eaters on the loose, the world is more dangerous than ever.",
+      "popularity": 106.971,
+      "poster_path": "https://image.tmdb.org/t/p/original/iGoXIpQb7Pot00EEdwpwPajheZ5.jpg",
+      "release_date": "2010-11-17",
+      "title": "Harry Potter and the Deathly Hallows: Part 1",
+      "video": false,
+      "vote_average": 7.756,
+      "vote_count": 18419
+    },
+    {
+      "adult": false,
+      "backdrop_path": "https://image.tmdb.org/t/p/original/5rrGVmRUuCKVbqUu41XIWTXJmNA.jpg",
+      "genre_ids": [
+        12,
+        14
+      ],
+      "id": 674,
+      "original_language": "en",
+      "original_title": "Harry Potter and the Goblet of Fire",
+      "overview": "When Harry Potter's name emerges from the Goblet of Fire, he becomes a competitor in a grueling battle for glory among three wizarding schools—the Triwizard Tournament. But since Harry never submitted his name for the Tournament, who did? Now Harry must confront a deadly dragon, fierce water demons and an enchanted maze only to find himself in the cruel grasp of He Who Must Not Be Named.",
+      "popularity": 126.004,
+      "poster_path": "https://image.tmdb.org/t/p/original/fECBtHlr0RB3foNHDiCBXeg9Bv9.jpg",
+      "release_date": "2005-11-16",
+      "title": "Harry Potter and the Goblet of Fire",
+      "video": false,
+      "vote_average": 7.814,
+      "vote_count": 19997
+    },
+    {
+      "adult": false,
+      "backdrop_path": "https://image.tmdb.org/t/p/original/urDWNffjwmNi5IQaezw9GwqkUXa.jpg",
+      "genre_ids": [
+        12,
+        14
+      ],
+      "id": 767,
+      "original_language": "en",
+      "original_title": "Harry Potter and the Half-Blood Prince",
+      "overview": "As Lord Voldemort tightens his grip on both the Muggle and wizarding worlds, Hogwarts is no longer a safe haven. Harry suspects perils may even lie within the castle, but Dumbledore is more intent upon preparing him for the final battle fast approaching. Together they work to find the key to unlock Voldemorts defenses and to this end, Dumbledore recruits his old friend and colleague Horace Slughorn, whom he believes holds crucial information. Even as the decisive showdown looms, romance blossoms for Harry, Ron, Hermione and their classmates. Love is in the air, but danger lies ahead and Hogwarts may never be the same again.",
+      "popularity": 103.399,
+      "poster_path": "https://image.tmdb.org/t/p/original/z7uo9zmQdQwU5ZJHFpv2Upl30i1.jpg",
+      "release_date": "2009-07-15",
+      "title": "Harry Potter and the Half-Blood Prince",
+      "video": false,
+      "vote_average": 7.692,
+      "vote_count": 18771
+    },
+    {
+      "adult": false,
+      "backdrop_path": "https://image.tmdb.org/t/p/original/n5A7brJCjejceZmHyujwUTVgQNC.jpg",
+      "genre_ids": [
+        14,
+        12
+      ],
+      "id": 12445,
+      "original_language": "en",
+      "original_title": "Harry Potter and the Deathly Hallows: Part 2",
+      "overview": "Harry, Ron and Hermione continue their quest to vanquish the evil Voldemort once and for all. Just as things begin to look hopeless for the young wizards, Harry discovers a trio of magical objects that endow him with powers to rival Voldemort's formidable skills.",
+      "popularity": 101.57,
+      "poster_path": "https://image.tmdb.org/t/p/original/c54HpQmuwXjHq2C9wmoACjxoom3.jpg",
+      "release_date": "2011-07-12",
+      "title": "Harry Potter and the Deathly Hallows: Part 2",
+      "video": false,
+      "vote_average": 8.099,
+      "vote_count": 19869
+    },
+    {
+      "adult": false,
+      "backdrop_path": "https://image.tmdb.org/t/p/original/pkxPkHOPJjOvzfQOclANEBT8OfK.jpg",
+      "genre_ids": [
+        12,
+        14
+      ],
+      "id": 675,
+      "original_language": "en",
+      "original_title": "Harry Potter and the Order of the Phoenix",
+      "overview": "Returning for his fifth year of study at Hogwarts, Harry is stunned to find that his warnings about the return of Lord Voldemort have been ignored. Left with no choice, Harry takes matters into his own hands, training a small group of students to defend themselves against the dark arts.",
+      "popularity": 115.558,
+      "poster_path": "https://image.tmdb.org/t/p/original/5aOyriWkPec0zUDxmHFP9qMmBaj.jpg",
+      "release_date": "2007-07-08",
+      "title": "Harry Potter and the Order of the Phoenix",
+      "video": false,
+      "vote_average": 7.681,
+      "vote_count": 18827
+    },
+    {
+      "adult": false,
+      "backdrop_path": "https://image.tmdb.org/t/p/original/8rft8A9nH43IReybFtYt21ezfMK.jpg",
+      "genre_ids": [
+        99
+      ],
+      "id": 899082,
+      "original_language": "en",
+      "original_title": "Harry Potter 20th Anniversary: Return to Hogwarts",
+      "overview": "An enchanting making-of story told through all-new in-depth interviews and cast conversations, inviting fans on a magical first-person journey through one of the most beloved film franchises of all time.",
+      "popularity": 41.998,
+      "poster_path": "https://image.tmdb.org/t/p/original/jntLBq0MLR3hrwKaTQswxACRPMs.jpg",
+      "release_date": "2022-01-01",
+      "title": "Harry Potter 20th Anniversary: Return to Hogwarts",
+      "video": false,
+      "vote_average": 7.305,
+      "vote_count": 3186
+    },
+    {
+      "adult": false,
+      "backdrop_path": "https://image.tmdb.org/t/p/original/fEHn4UznzlpAxNlHTQj3yF3LIMW.jpg",
+      "genre_ids": [
+        18,
+        53,
+        37
+      ],
+      "id": 829729,
+      "original_language": "en",
+      "original_title": "Potter's Ground",
+      "overview": "A former Confederate marauder tries to make a clean start on a Texas dirt farm with his wife and young daughter. He quickly learns that sometimes the past just won't stay buried.",
+      "popularity": 3.831,
+      "poster_path": "https://image.tmdb.org/t/p/original/vsw6fmSCjrQrnvAT3YMDjFuZvII.jpg",
+      "release_date": "2021-06-01",
+      "title": "Potter's Ground",
+      "video": false,
+      "vote_average": 6.2,
+      "vote_count": 31
+    },
+    {
+      "adult": false,
+      "backdrop_path": "https://image.tmdb.org/t/p/original/4LOxoeZWt5wr9mooxEZRFK96lDd.jpg",
+      "genre_ids": [
+        99
+      ],
+      "id": 483898,
+      "original_language": "en",
+      "original_title": "50 Greatest Harry Potter Moments",
+      "overview": "To mark the release two weeks ago of the eighth and final movie in the series, Robbie Coltrane narrates a countdown of the movie franchise's best moments. From Harry's first meeting with Ron and Hermione aboard the Hogwarts Express through to magical mysteries.",
+      "popularity": 15.689,
+      "poster_path": "https://image.tmdb.org/t/p/original/g1xiBoLD6v3ZaXPa4QtuXiQeYKW.jpg",
+      "release_date": "2011-07-27",
+      "title": "50 Greatest Harry Potter Moments",
+      "video": false,
+      "vote_average": 7.3,
+      "vote_count": 114
+    },
+    {
+      "adult": false,
+      "backdrop_path": "https://image.tmdb.org/t/p/original/mjCYpJXCBYDZgMr1U1KZcFgFDfC.jpg",
+      "genre_ids": [
+        99
+      ],
+      "id": 482408,
+      "original_language": "en",
+      "original_title": "Harry Potter: A History Of Magic",
+      "overview": "A thrilling journey through legends, belief and folklore, this film goes behind the scenes with the British Library as they search to tell that story through objects in their collection, in an ambitious new exhibition: Harry Potter: A History Of Magic.  J.K. Rowling, who is lending unseen manuscripts, drawings and drafts from her private archives (which will sit alongside treasures from the British Library, as well as original drafts and drawings from Jim Kay) talks about some of the personal items she has lent to the exhibition and gives new insight into her writing, looking at some of the objects from the exhibition that have fired her imagination.",
+      "popularity": 12.236,
+      "poster_path": "https://image.tmdb.org/t/p/original/kkzDng2S8w2hT1gap7MdMdx7uUE.jpg",
+      "release_date": "2017-10-28",
+      "title": "Harry Potter: A History Of Magic",
+      "video": false,
+      "vote_average": 7.3,
+      "vote_count": 86
+    },
+    {
+      "adult": false,
+      "backdrop_path": "https://image.tmdb.org/t/p/originalnull",
+      "genre_ids": [],
+      "id": 919590,
+      "original_language": "de",
+      "original_title": "Phantastische Harry Potter Momente - Das große SAT.1 Spezial",
+      "overview": "",
+      "popularity": 5.612,
+      "poster_path": "https://image.tmdb.org/t/p/original/1Ci05BbrRgc8qwKSvliJH6gqzol.jpg",
+      "release_date": "2021-10-31",
+      "title": "Phantastische Harry Potter Momente - Das große SAT.1 Spezial",
+      "video": false,
+      "vote_average": 6.6,
+      "vote_count": 27
+    },
+    {
+      "adult": false,
+      "backdrop_path": "https://image.tmdb.org/t/p/original/heXvhrTFCF8j84iFQtpXEKCFwGL.jpg",
+      "genre_ids": [
+        18,
+        10751,
+        10749
+      ],
+      "id": 13967,
+      "original_language": "en",
+      "original_title": "Miss Potter",
+      "overview": "Beatrix Potter, the author of the beloved children's book \"The Tale of Peter Rabbit\", struggles for love, happiness and success.",
+      "popularity": 16.907,
+      "poster_path": "https://image.tmdb.org/t/p/original/fecGKwGABfZdMbiH1WQN9zMcOkS.jpg",
+      "release_date": "2006-12-03",
+      "title": "Miss Potter",
+      "video": false,
+      "vote_average": 6.597,
+      "vote_count": 471
+    },
+    {
+      "adult": false,
+      "backdrop_path": "https://image.tmdb.org/t/p/originalnull",
+      "genre_ids": [
+        99
+      ],
+      "id": 485764,
+      "original_language": "de",
+      "original_title": "Potters Stier",
+      "overview": "Potter's Bull is the first part of the \"Over-Paintings\" Trilogy (Uebermalungen) by painter and director STRAWALDE (Juergen Boettcher). Paulus Potter's simple postcard scene entitled \"The Young Bull\" (\"den jungen Stier\") is artistically alienated in an imposing fashion. By using assorted means of \"painting over\" and/or front projections, the figure of the bull in the center of the card is placed in a state of constant flux. A viewer may also choose to follow the shifting background behind the bull, which continues to recontextualize the bull in shifting worlds. Accompanied by a sound collage.",
+      "popularity": 0.914,
+      "poster_path": "https://image.tmdb.org/t/p/original/tHf1O99Q4odH0Y4pHGbqLkVq1Qc.jpg",
+      "release_date": "1981-11-07",
+      "title": "Potter's Bull",
+      "video": false,
+      "vote_average": 0,
+      "vote_count": 0
+    },
+    {
+      "adult": false,
+      "backdrop_path": "https://image.tmdb.org/t/p/originalnull",
+      "genre_ids": [
+        99
+      ],
+      "id": 1082707,
+      "original_language": "en",
+      "original_title": "The Magic Touch of Harry Potter",
+      "overview": "A 2004 documentary on the first three “Harry Potter” films detailing the behind-the-scenes journey of making them.",
+      "popularity": 5.045,
+      "poster_path": "https://image.tmdb.org/t/p/original/gwFARNYf1Odv3E8ESVHyikXmMIY.jpg",
+      "release_date": "2004-06-11",
+      "title": "The Magic Touch of Harry Potter",
+      "video": false,
+      "vote_average": 7.5,
+      "vote_count": 11
+    },
+    {
+      "adult": false,
+      "backdrop_path": "https://image.tmdb.org/t/p/originalnull",
+      "genre_ids": [
+        99
+      ],
+      "id": 226215,
+      "original_language": "es",
+      "original_title": "Ceramiqueros de tras la sierra",
+      "overview": "Raymundo Gleyzer's documentary on o community of Pottery Makers in the west of Cordoba province in Argentina who create pieces to sell to the tourists.",
+      "popularity": 0.991,
+      "poster_path": "https://image.tmdb.org/t/p/original/aFEffaYJ5UUt9Ho3zuEH0vHIHie.jpg",
+      "release_date": "1965-06-07",
+      "title": "The Pottery Makers",
+      "video": false,
+      "vote_average": 7,
+      "vote_count": 5
+    },
+    {
+      "adult": false,
+      "backdrop_path": "https://image.tmdb.org/t/p/original/y4hDOkRKW6UXQK4G0aAovbVb4d2.jpg",
+      "genre_ids": [
+        35
+      ],
+      "id": 413990,
+      "original_language": "en",
+      "original_title": "Pottersville",
+      "overview": "Maynard, a beloved local businessman is mistaken for the legendary Bigfoot during an inebriated romp through town in a makeshift gorilla costume. The sightings set off an international Bigfoot media spectacle and a windfall of tourism dollars for a simple American town hit by hard times. When Brock Masterson, reality TV’s “Monster Hunter,” arrives to hunt the beast, Maynard agonizes over whether to come clean, destroying the rebirth of his beloved town, or perpetuate the inadvertent hoax.",
+      "popularity": 8.824,
+      "poster_path": "https://image.tmdb.org/t/p/original/zlQgswQ5GEklrbv8MkohQHyomZu.jpg",
+      "release_date": "2017-11-10",
+      "title": "Pottersville",
+      "video": false,
+      "vote_average": 5,
+      "vote_count": 120
+    },
+    {
+      "adult": false,
+      "backdrop_path": "https://image.tmdb.org/t/p/original/1V5aMwkQj6JQC381BH3aZkyowMz.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 728364,
+      "original_language": "ja",
+      "original_title": "ハルカの陶",
+      "overview": "Koyama Haruka was an office worker who lived an unremarkable life, but one day she comes across a large platter of Bizen ware on display at a department store. Little by little, even at work and on her days off, Haruka is unable to think about anything but Bizen ware. With her heart filled by an inexpressible zeal, she heads to the city of Bizen in Okayama Prefecture and excitedly visits the creator of the large platter, Osamu.",
+      "popularity": 1.016,
+      "poster_path": "https://image.tmdb.org/t/p/original/vWhNodHw6Z8yhaa70HwyHWKe09y.jpg",
+      "release_date": "2019-11-30",
+      "title": "Haruka's Pottery",
+      "video": false,
+      "vote_average": 7,
+      "vote_count": 1
+    },
+    {
+      "adult": false,
+      "backdrop_path": "https://image.tmdb.org/t/p/originalnull",
+      "genre_ids": [
+        99,
+        10770
+      ],
+      "id": 918078,
+      "original_language": "en",
+      "original_title": "Daniel Radcliffe: Being Harry Potter",
+      "overview": "Made-for-television documentary about Daniel Radcliffe and his role as Harry Potter.",
+      "popularity": 6.269,
+      "poster_path": "https://image.tmdb.org/t/p/original/4keobTsQVrMS2JwE3TRod0SrYTD.jpg",
+      "release_date": "2012-10-10",
+      "title": "Daniel Radcliffe: Being Harry Potter",
+      "video": false,
+      "vote_average": 6.1,
+      "vote_count": 20
+    }
+  ],
+  "total_pages": 5,
+  "total_results": 93
+}
