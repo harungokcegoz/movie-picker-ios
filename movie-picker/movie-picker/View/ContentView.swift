@@ -10,20 +10,9 @@ struct ContentView: View {
     var body: some View {
         VStack {
             VStack {
-                Text("Movie Picker")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(Color("imdb-yellow"))
-                    .padding()
-                    .overlay(
-                        Rectangle()
-                            .frame(height: 0.5)
-                            .foregroundColor(Color("imdb-yellow"))
-                            .padding(.horizontal, -20), // Extend the rectangle beyond the padding of the Text view
-                        alignment: .bottom
-                    )
+                Header()
             }
-        
+            
             ZStack {
                 VStack {
                     switch tabSelected {
@@ -38,6 +27,7 @@ struct ContentView: View {
                     }
                     Spacer()
                 }
+                .padding(.top, 40)
             }
             VStack {
                 Spacer()

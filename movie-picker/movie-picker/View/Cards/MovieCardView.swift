@@ -18,19 +18,19 @@ struct MovieCardView: View {
                     ProgressView()
                 }
                 }
-                .frame(width: 300, height: 500)
+                .frame(width: 250, height: 400)
                 .cornerRadius(20)
                 .shadow(radius: 5)
                 
-                if let notification = notification {
-                    RoundedRectangle(cornerRadius: 20)
-                        .frame(width: 300, height: 500, alignment: .leading)
-                        .foregroundColor(notificationColor ?? .clear)
-                        .opacity(0.2)
-                    Text(notification)
-                        .font(.title)
-                        .foregroundColor(.white)
-                }
+//                if let notification = notification {
+//                    RoundedRectangle(cornerRadius: 20)
+//                        .frame(width: 300, height: 500, alignment: .leading)
+//                        .foregroundColor(notificationColor ?? .clear)
+//                        .opacity(0.2)
+//                    Text(notification)
+//                        .font(.title)
+//                        .foregroundColor(.white)
+//                }
             }
             .offset(x: offset.width, y: offset.height * 0.4)
             .rotationEffect(.degrees(Double(offset.width / 40)))
@@ -48,6 +48,7 @@ struct MovieCardView: View {
                     }
             )
             .padding()
+            .animation(.spring)
             
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
