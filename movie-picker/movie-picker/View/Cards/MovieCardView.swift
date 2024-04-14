@@ -6,6 +6,7 @@ struct MovieCardView: View {
     @State private var notification: String?
     @State private var notificationColor: Color?
     @State private var isNotificationVisible: Bool? = false
+    @State private var rotation: CGFloat = 0.0
     
     var body: some View {
         VStack {
@@ -22,15 +23,31 @@ struct MovieCardView: View {
                 .cornerRadius(20)
                 .shadow(radius: 5)
                 
-//                if let notification = notification {
-//                    RoundedRectangle(cornerRadius: 20)
-//                        .frame(width: 300, height: 500, alignment: .leading)
-//                        .foregroundColor(notificationColor ?? .clear)
-//                        .opacity(0.2)
-//                    Text(notification)
-//                        .font(.title)
-//                        .foregroundColor(.white)
-//                }
+                
+                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                    .frame(width: 125, height: 750)
+                    .foregroundStyle(LinearGradient(gradient: Gradient(colors: [.clear, Color("imdb-yellow")]), startPoint: .top, endPoint: .bottom))
+                    .rotationEffect(.degrees(rotation))
+                    .mask(
+                        RoundedRectangle(cornerRadius: 20, style: .continuous)
+                            .stroke(lineWidth: 7)
+                            .frame(width: 255, height: 395)
+                    )
+                
+                //                if let notification = notification {
+                //                    RoundedRectangle(cornerRadius: 20)
+                //                        .frame(width: 300, height: 500, alignment: .leading)
+                //                        .foregroundColor(notificationColor ?? .clear)
+                //                        .opacity(0.2)
+                //                    Text(notification)
+                //                        .font(.title)
+                //                        .foregroundColor(.white)
+                //                }
+            }
+            .onAppear{
+                withAnimation(.linear(duration: 4).repeatForever(autoreverses: false)) {
+                    rotation = 360
+                }
             }
             .offset(x: offset.width, y: offset.height * 0.4)
             .rotationEffect(.degrees(Double(offset.width / 40)))
