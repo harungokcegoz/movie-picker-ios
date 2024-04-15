@@ -2,90 +2,95 @@ import SwiftUI
 
 struct MovieCardView: View {
     let movie: MovieModel
+    
     @State private var offset = CGSize.zero
     @State private var notification: String?
     @State private var notificationColor: Color?
     @State private var isNotificationVisible: Bool? = false
-    @State private var rotation: CGFloat = 0.0
+    @State private var rotation: Double = 0.0
+    @State private var cardHeight: CGFloat = 400
+    @State private var cardWidth: CGFloat = 250
     
     var body: some View {
         VStack {
-            ZStack {
-                VStack {
-                    AsyncImage(url: URL(string: movie.posterPath ?? "film")) { image in
-                        image.resizable()
-                    }
-                placeholder: {
-                    ProgressView()
-                }
-                }
-                .frame(width: 250, height: 400)
-                .cornerRadius(20)
-                .shadow(radius: 5)
-                
-                
-                RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .frame(width: 125, height: 750)
-                    .foregroundStyle(LinearGradient(gradient: Gradient(colors: [.clear, Color("imdb-yellow")]), startPoint: .top, endPoint: .bottom))
-                    .rotationEffect(.degrees(rotation))
-                    .mask(
-                        RoundedRectangle(cornerRadius: 20, style: .continuous)
-                            .stroke(lineWidth: 7)
-                            .frame(width: 255, height: 395)
-                    )
-                
-                //                if let notification = notification {
-                //                    RoundedRectangle(cornerRadius: 20)
-                //                        .frame(width: 300, height: 500, alignment: .leading)
-                //                        .foregroundColor(notificationColor ?? .clear)
-                //                        .opacity(0.2)
-                //                    Text(notification)
-                //                        .font(.title)
-                //                        .foregroundColor(.white)
-                //                }
-            }
-            .onAppear{
-                withAnimation(.linear(duration: 4).repeatForever(autoreverses: false)) {
-                    rotation = 360
-                }
-            }
-            .offset(x: offset.width, y: offset.height * 0.4)
-            .rotationEffect(.degrees(Double(offset.width / 40)))
-            .gesture(
-                DragGesture()
-                    .onChanged { gesture in
-                        offset = gesture.translation
-                        updateNotification(width: offset.width)
-                    }
-                    .onEnded { _ in
-                        withAnimation(.easeOut(duration: 0.2)) {
-                            swipeCard(width: offset.width)
-                            updateNotification(width: offset.width)
-                        }
-                    }
-            )
-            .padding()
-            .animation(.spring)
-            
-            ZStack {
-                RoundedRectangle(cornerRadius: 10)
-                    .frame(width: 200, height: 50)
-                    .foregroundColor(.gray.opacity(0.2))
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.gray, lineWidth: 1)
-                    )
-                Text(notification ?? "")
-                    .font(.subheadline)
-            }
-            .opacity(isNotificationVisible ?? false ? 1 : 0)
-            
-            
+//            notificationView
+            cardContent
         }
-        
+        .padding(.top, 40)
     }
     
-    func swipeCard(width: CGFloat) {
+    private var cardContent: some View {
+        ZStack {
+            posterImage
+            rotatingGradient
+        }
+        .onAppear {
+            startRotating()
+        }
+        .offset(x: offset.width, y: offset.height * 0.4)
+        .rotationEffect(.degrees(Double(offset.width / 40)))
+        .gesture(dragGesture)
+        .padding(.vertical, -20)
+
+    }
+    
+    private var posterImage: some View {
+        AsyncImage(url: URL(string: movie.posterPath ?? "film")) { image in
+            image.resizable()
+        } placeholder: {
+            ProgressView()
+        }
+        .frame(width: cardWidth, height: cardHeight)
+        .cornerRadius(20)
+    }
+    
+    private var rotatingGradient: some View {
+        RoundedRectangle(cornerRadius: 20, style: .continuous)
+            .frame(width: cardWidth - 100, height: cardHeight + 100)
+            .foregroundStyle(
+                LinearGradient(
+                    gradient: Gradient(colors: [
+                        Color("icon-orange").opacity(0.1),
+                        Color("icon-orange"),
+                        Color("icon-orange"),
+                        Color("icon-orange").opacity(0.1)
+                    ]),
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+            )
+            .rotationEffect(.degrees(rotation))
+            .mask(
+                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                    .stroke(lineWidth: 3)
+                    .frame(width: cardWidth + 1, height: cardHeight + 1)
+            )
+    }
+    
+    private var dragGesture: some Gesture {
+        DragGesture()
+            .onChanged { gesture in
+                offset = gesture.translation
+                updateNotification(width: offset.width)
+            }
+            .onEnded { _ in
+                withAnimation(.easeOut(duration: 0.2)) {
+                    swipeCard(width: offset.width)
+                    updateNotification(width: offset.width)
+                }
+            }
+    }
+    
+    private var notificationView: some View {
+        ZStack {
+            Text(notification ?? "")
+                .font(.subheadline)
+                .foregroundColor(.white)
+        }
+        .opacity(isNotificationVisible ?? false ? 1 : 0)
+    }
+    
+    private func swipeCard(width: CGFloat) {
         switch width {
         case -500...(-150):
             offset = CGSize(width: -500, height: 0)
@@ -96,21 +101,37 @@ struct MovieCardView: View {
         }
     }
     
-    func updateNotification(width: CGFloat) {
+    private func updateNotification(width: CGFloat) {
+        clearNotifications()
         switch width {
-        case -500...(-80):
-            notification = "Skipped!"
-            notificationColor = .red
-            isNotificationVisible = true
-        case 80...500:
-            notification = "Added to favorites!"
-            notificationColor = .green
-            isNotificationVisible = true
-        default:
-            notification = nil
-            notificationColor = nil
-            isNotificationVisible = false
+            case -500...(-80):
+                notification = "Skipped!"
+                notificationColor = .red
+                isNotificationVisible = true
+            case 80...500:
+                notification = "Added to favorites!"
+                notificationColor = .green
+                isNotificationVisible = true
+            default:
+                notification = nil
+                notificationColor = nil
+                isNotificationVisible = false
         }
+    }
+    
+    private func startRotating() {
+        let timer = Timer.scheduledTimer(withTimeInterval: 0.03, repeats: true) { _ in
+            withAnimation(.linear(duration: 0.03)) {
+                rotation += 1
+            }
+        }
+        RunLoop.current.add(timer, forMode: .common)
+    }
+    
+    private func clearNotifications() {
+        notification = nil
+        notificationColor = nil
+        isNotificationVisible = false
     }
 }
 
