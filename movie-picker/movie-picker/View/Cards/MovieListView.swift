@@ -7,20 +7,29 @@ struct MovieListView: View {
     @State private var shufflePressed = false
     
     var body: some View {
-        VStack {
-            ZStack {
-               movieStack
+        
+        ZStack {
+            VStack {
+                Loading()
             }
-            button
-        }
-        .onAppear {
-            isLoading = true
-            Task {
-                await viewModel.fetchMovies()
-                isLoading = false
+            .opacity(isLoading ? 1 : 0)
+            
+            VStack {
+                ZStack {
+                   movieStack
+                }
+                button
             }
+            .onAppear {
+                isLoading = true
+                Task {
+                    await viewModel.fetchMovies()
+                    await Task.sleep(5 * 1_000_000_000)
+                    isLoading = false
+                }
+            }
+            .opacity(isLoading ? 0 : 1)
         }
-        .disabled(isLoading)
     }
     
     private var button: some View {

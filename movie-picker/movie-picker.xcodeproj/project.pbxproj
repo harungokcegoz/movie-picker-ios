@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A073AD72BCDDF2600492C5B /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A073AD62BCDDF2600492C5B /* Loading.swift */; };
 		4A3DEB672BBC339A0004BECE /* movie_pickerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3DEB662BBC339A0004BECE /* movie_pickerApp.swift */; };
 		4A3DEB6B2BBC339C0004BECE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3DEB6A2BBC339C0004BECE /* Assets.xcassets */; };
 		4A3DEB6E2BBC339C0004BECE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3DEB6D2BBC339C0004BECE /* Preview Assets.xcassets */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A073AD62BCDDF2600492C5B /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		4A3DEB632BBC339A0004BECE /* movie-picker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "movie-picker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A3DEB662BBC339A0004BECE /* movie_pickerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movie_pickerApp.swift; sourceTree = "<group>"; };
 		4A3DEB6A2BBC339C0004BECE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		4A073AD32BCDCF8200492C5B /* Atoms */ = {
 			isa = PBXGroup;
 			children = (
+				4A073AD62BCDDF2600492C5B /* Loading.swift */,
 			);
 			path = Atoms;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				4A3DEB942BBC40660004BECE /* MovieModel.swift in Sources */,
 				4A78E1282BC5ED1900F51BCC /* ShuffleView.swift in Sources */,
 				4A3DEB9D2BBC49840004BECE /* MovieDetailsView.swift in Sources */,
+				4A073AD72BCDDF2600492C5B /* Loading.swift in Sources */,
 				4A78E1252BC5E6B200F51BCC /* CustomTabBar.swift in Sources */,
 				4A3DEB992BBC47850004BECE /* MovieCardView.swift in Sources */,
 				4A99808C2BC5F7D00017E183 /* HouseView.swift in Sources */,
