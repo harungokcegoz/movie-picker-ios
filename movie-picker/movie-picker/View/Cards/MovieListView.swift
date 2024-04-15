@@ -4,14 +4,14 @@ struct MovieListView: View {
     @ObservedObject var viewModel: MovieViewModel
     
     @State private var isLoading = false
+    @State private var shufflePressed = false
     
     var body: some View {
         VStack {
             ZStack {
-                ForEach(viewModel.movies) { movie in
-                    MovieCardView(movie: movie)
-                }
+               movieStack
             }
+            button
         }
         .onAppear {
             isLoading = true
@@ -22,8 +22,35 @@ struct MovieListView: View {
         }
         .disabled(isLoading)
     }
+    
+    private var button: some View {
+       Button {
+           shufflePressed = true
+       } label: {
+           HStack {
+               Image(systemName: "shuffle")
+               Text("Reshuffle")
+           }
+           .foregroundColor(.black)
+           .padding()
+           .padding(.horizontal, 15)
+           .background(Color("imdb-yellow"))
+           .cornerRadius(10)
+       }
+    }
+    
+    private var movieStack: some View {
+        ForEach(viewModel.movies) { movie in
+            MovieCardView(movie: movie)
+        }
+    }
 }
 
-#Preview {
-    MovieListView(viewModel: MovieViewModel())
+
+
+// Preview code
+struct MovieListView_Previews: PreviewProvider {
+    static var previews: some View {
+        MovieListView(viewModel: MovieViewModel())
+    }
 }

@@ -14,12 +14,12 @@ class WebService {
 //            var request = URLRequest(url: url)
 //            request.httpMethod = "GET"
 //            request.allHTTPHeaderFields = headers
-//            
+//
 //            let (data, response) = try await URLSession.shared.data(for: request)
 //            guard let httpResponse = response as? HTTPURLResponse else {
 //                throw NetworkError.badResponse
 //            }
-//            
+//
 //            guard (200..<300).contains(httpResponse.statusCode) else {
 //                throw NetworkError.badStatus
 //            }
@@ -84,6 +84,10 @@ class MovieViewModel: ObservableObject {
         } catch {
             print("Error fetching movies: \(error)")
         }
+    }
+    
+    func shuffleMovies() {
+        movies.shuffle()
     }
 }
 

@@ -9,6 +9,8 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
+            Spacer()
+            
             VStack {
                 Header()
             }
@@ -25,16 +27,17 @@ struct ContentView: View {
                     case .person:
                         PersonView()
                     }
-                    Spacer()
                 }
-                .padding(.top, 40)
             }
+            
+            Spacer()
+            
             VStack {
-                Spacer()
                 CustomTabBar(selectedTab: $tabSelected)
             }
         }
         .background(Color("bg-black"))
+        .ignoresSafeArea()
     }
 }
 
