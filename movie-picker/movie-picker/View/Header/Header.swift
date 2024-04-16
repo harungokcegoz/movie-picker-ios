@@ -7,7 +7,7 @@ struct Header: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 200, height: 50)
-                .padding(.bottom, 20)
+                .padding(.vertical, 15)
                 .overlay(
                     Rectangle()
                         .frame(width: 500, height: 0.5)

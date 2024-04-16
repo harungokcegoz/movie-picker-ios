@@ -61,7 +61,8 @@ extension View {
                     .stroke(Color("imdb-yellow"), lineWidth: 0.3)
             )
             .shadow(radius: 5)
-            .padding(20)
+            .padding(.horizontal, 20)
+
     }
 }
 

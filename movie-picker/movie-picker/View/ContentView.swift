@@ -27,6 +27,7 @@ struct ContentView: View {
             }
         
             CustomTabBar(selectedTab: $tabSelected)
+                .padding(.top, 50)
         }
         .frame(height: UIScreen.main.bounds.height)
         .background(Color("bg-black"))
