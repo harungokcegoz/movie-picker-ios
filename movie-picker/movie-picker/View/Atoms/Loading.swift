@@ -20,7 +20,7 @@ struct Loading: View {
     
     private var mainCircle: some View {
         Circle()
-            .frame(width: 150)
+            .frame(width: 100)
             .overlay {
                 Circle()
                     .stroke(Color("imdb-yellow"), lineWidth: 5)
@@ -34,9 +34,8 @@ struct Loading: View {
     }
     
     private var loadingText: some View {
-        Text("Loading")
-            .font(.subheadline)
-            .fontWeight(.bold)
+        Text("Shuffling...")
+            .font(Font.custom("SFProRounded-Semibold", size: 15))
             .foregroundColor(Color("imdb-yellow"))
             .padding()
     }

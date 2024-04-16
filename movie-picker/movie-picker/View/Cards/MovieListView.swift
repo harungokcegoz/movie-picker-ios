@@ -24,7 +24,7 @@ struct MovieListView: View {
                 isLoading = true
                 Task {
                     await viewModel.fetchMovies()
-                    await Task.sleep(5 * 1_000_000_000)
+                    await Task.sleep(2 * 1_000_000_000)
                     isLoading = false
                 }
             }
@@ -39,10 +39,11 @@ struct MovieListView: View {
            HStack {
                Image(systemName: "shuffle")
                Text("Reshuffle")
+                   .font(Font.custom("SFProRounded-Medium", size: 16))
            }
            .foregroundColor(.black)
            .padding()
-           .padding(.horizontal, 15)
+           .padding(.horizontal, 5)
            .background(Color("imdb-yellow"))
            .cornerRadius(10)
        }
