@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct MovieCardView: View {
+struct MovieCardFrontView: View {
     let movie: MovieModel
     
     @State private var offset = CGSize.zero
@@ -132,9 +132,9 @@ struct MovieCardView: View {
     }
 }
 
-struct MovieCardView_Previews: PreviewProvider {
+struct MovieCardFrontView_Previews: PreviewProvider {
     static var previews: some View {
-        MovieCardView(
+        MovieCardFrontView(
             movie: MovieModel(
                 id: 1,
                 title: "Godzilla vs. Kong",

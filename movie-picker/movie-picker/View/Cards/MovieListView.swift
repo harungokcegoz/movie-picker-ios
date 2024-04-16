@@ -6,6 +6,14 @@ struct MovieListView: View {
     @State private var isLoading = false
     @State private var shufflePressed = false
     
+    @State var backDegree = 0.0
+     @State var frontDegree = -90.0
+     @State var isFlipped = false
+
+     let width : CGFloat = 200
+     let height : CGFloat = 250
+     let durationAndDelay : CGFloat = 0.3
+    
     var body: some View {
         
         ZStack {
@@ -24,7 +32,7 @@ struct MovieListView: View {
                 isLoading = true
                 Task {
                     await viewModel.fetchMovies()
-                    await Task.sleep(3 * 1_000_000_000)
+                    await Task.sleep(4 * 1_000_000_000)
                     isLoading = false
                 }
             }
@@ -51,7 +59,26 @@ struct MovieListView: View {
     
     private var movieStack: some View {
         ForEach(viewModel.movies) { movie in
-            MovieCardView(movie: movie)
+            MovieCardFrontView(movie: movie)
+        }
+    }
+    
+    private func flipCard () {
+        isFlipped = !isFlipped
+        if isFlipped {
+            withAnimation(.linear(duration: durationAndDelay)) {
+                backDegree = 90
+            }
+            withAnimation(.linear(duration: durationAndDelay).delay(durationAndDelay)){
+                frontDegree = 0
+            }
+        } else {
+            withAnimation(.linear(duration: durationAndDelay)) {
+                frontDegree = -90
+            }
+            withAnimation(.linear(duration: durationAndDelay).delay(durationAndDelay)){
+                backDegree = 0
+            }
         }
     }
 }
