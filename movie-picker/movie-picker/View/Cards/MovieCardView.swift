@@ -22,12 +22,12 @@ struct MovieCardView: View {
     private var cardContent: some View {
         ZStack {
             posterImage
-            rotatingGradient
+//            rotatingGradient
         }
         .offset(x: offset.width, y: offset.height * 0.4)
         .rotationEffect(.degrees(Double(offset.width / 40)))
         .gesture(dragGesture)
-        .padding(.vertical, -20)
+        .padding(.vertical, 20)
 
     }
     
@@ -41,28 +41,28 @@ struct MovieCardView: View {
         .cornerRadius(20)
     }
     
-    private var rotatingGradient: some View {
-        RoundedRectangle(cornerRadius: 20, style: .continuous)
-            .frame(width: cardWidth - 100, height: cardHeight + 100)
-            .foregroundStyle(
-                LinearGradient(
-                    gradient: Gradient(colors: [
-                        Color("icon-orange").opacity(0.1),
-                        Color("icon-orange"),
-                        Color("icon-orange"),
-                        Color("icon-orange").opacity(0.1)
-                    ]),
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-            )
-            .rotationEffect(.degrees(rotation))
-            .mask(
-                RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .stroke(lineWidth: 3)
-                    .frame(width: cardWidth + 1, height: cardHeight + 1)
-            )
-    }
+//    private var rotatingGradient: some View {
+//        RoundedRectangle(cornerRadius: 20, style: .continuous)
+//            .frame(width: cardWidth - 150, height: cardHeight + 150)
+//            .foregroundStyle(
+//                LinearGradient(
+//                    gradient: Gradient(colors: [
+//                        Color("icon-orange").opacity(0.1),
+//                        Color("icon-orange"),
+//                        Color("icon-orange"),
+//                        Color("icon-orange").opacity(0.1)
+//                    ]),
+//                    startPoint: .top,
+//                    endPoint: .bottom
+//                )
+//            )
+//            .rotationEffect(.degrees(rotation))
+//            .mask(
+//                RoundedRectangle(cornerRadius: 20, style: .continuous)
+//                    .stroke(lineWidth: 3)
+//                    .frame(width: cardWidth + 1, height: cardHeight + 1)
+//            )
+//    }
     
     private var dragGesture: some Gesture {
         DragGesture()
