@@ -20,24 +20,34 @@ struct Loading: View {
     
     private var mainCircle: some View {
         Circle()
-            .frame(width: 100)
+            .frame(width: 150)
+            .foregroundColor(.imdbYellow)
             .overlay {
                 Circle()
-                    .stroke(Color("imdb-yellow"), lineWidth: 5)
+                    .stroke(.iconOrange, lineWidth: 10)
                     .scaleEffect(animationAmount)
                     .opacity(Double(2 - animationAmount))
                     .animation(
-                        .easeInOut(duration: 1)
-                            .repeatForever(autoreverses: false), value: animationAmount
+                        .easeInOut(duration: 1.5)
+                        .repeatForever(autoreverses: false), value: animationAmount
                     )
+                Circle()
+                    .stroke(.iconOrange.opacity(0.7), lineWidth: 2)
             }
     }
     
     private var loadingText: some View {
-        Text("Shuffling...")
-            .font(Font.custom("SFProRounded-Semibold", size: 15))
-            .foregroundColor(Color("imdb-yellow"))
-            .padding()
+        VStack {
+            Image(systemName: "shuffle")
+                .foregroundColor(.black)
+               
+        }
+        .scaleEffect(animationAmount)
+        .animation(
+            .easeInOut(duration: 1.5)
+            .repeatForever(autoreverses: false), value: animationAmount
+        )
+        
     }
 }
 

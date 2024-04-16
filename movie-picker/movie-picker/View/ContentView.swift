@@ -9,11 +9,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Spacer()
-            
-            VStack {
-                Header()
-            }
+            Header()
             
             ZStack {
                 VStack {
@@ -29,13 +25,10 @@ struct ContentView: View {
                     }
                 }
             }
-            
-            Spacer()
-            
-            VStack {
-                CustomTabBar(selectedTab: $tabSelected)
-            }
+        
+            CustomTabBar(selectedTab: $tabSelected)
         }
+        .frame(height: UIScreen.main.bounds.height)
         .background(Color("bg-black"))
         .ignoresSafeArea()
     }

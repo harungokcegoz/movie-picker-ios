@@ -24,9 +24,6 @@ struct MovieCardView: View {
             posterImage
             rotatingGradient
         }
-        .onAppear {
-            startRotating()
-        }
         .offset(x: offset.width, y: offset.height * 0.4)
         .rotationEffect(.degrees(Double(offset.width / 40)))
         .gesture(dragGesture)
@@ -119,14 +116,14 @@ struct MovieCardView: View {
         }
     }
     
-    private func startRotating() {
-        let timer = Timer.scheduledTimer(withTimeInterval: 0.03, repeats: true) { _ in
-            withAnimation(.linear(duration: 0.03)) {
-                rotation += 1
-            }
-        }
-        RunLoop.current.add(timer, forMode: .common)
-    }
+//    private func startRotating() {
+//        let timer = Timer.scheduledTimer(withTimeInterval: 0.04, repeats: true) { _ in
+//            withAnimation(.linear(duration: 0.04)) {
+//                rotation += 3
+//            }
+//        }
+//        RunLoop.current.add(timer, forMode: .common)
+//    }
     
     private func clearNotifications() {
         notification = nil

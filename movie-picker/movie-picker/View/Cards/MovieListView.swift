@@ -24,7 +24,7 @@ struct MovieListView: View {
                 isLoading = true
                 Task {
                     await viewModel.fetchMovies()
-                    await Task.sleep(2 * 1_000_000_000)
+                    await Task.sleep(3 * 1_000_000_000)
                     isLoading = false
                 }
             }
