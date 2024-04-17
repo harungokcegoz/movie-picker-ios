@@ -3,6 +3,7 @@ import SwiftUI
 struct Loading: View {
     
     @State private var animationAmount = 1.0
+    @State private var isAnimating = true
     
     var body: some View {
         VStack {
@@ -11,11 +12,17 @@ struct Loading: View {
                 loadingText
             }
         }
-        .onAppear {
-            animationAmount = 2
-        }
         .padding()
         .shadow(radius: 10)
+        .onAppear {
+            animationAmount = 2
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 4.35) {
+                withAnimation(.easeOut(duration: 1)) {
+                    isAnimating = false
+                }
+            }
+        }
     }
     
     private var mainCircle: some View {
@@ -39,13 +46,14 @@ struct Loading: View {
                     .scaleEffect(animationAmount)
                     .opacity(Double(2 - animationAmount))
                     .animation(
-                        .easeInOut(duration: 1.5)
+                        .easeInOut(duration: animationAmount)
                         .repeatForever(autoreverses: true), value: animationAmount
                     )
                 Circle()
-                    .stroke(.iconOrange.opacity(0.7), lineWidth: 2)
-                    .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                    .stroke(Color.iconOrange.opacity(0.7), lineWidth: 2)
+                    .shadow(radius: 10)
             }
+            .opacity(isAnimating ? 1 : 0)
     }
     
     private var loadingText: some View {
@@ -61,13 +69,14 @@ struct Loading: View {
                 abs(animationAmount),
                 anchor: .center
             )
+            .opacity(isAnimating ? 1 : 0)
             .animation(
-                .easeInOut(duration: 1.5)
+                .easeInOut(duration: animationAmount)
                 .repeatForever(autoreverses: true), value: animationAmount
             )
     }
-
 }
+
 
 #Preview {
     Loading()
