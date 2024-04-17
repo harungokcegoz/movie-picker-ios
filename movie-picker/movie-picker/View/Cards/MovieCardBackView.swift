@@ -44,6 +44,8 @@ struct MovieCardBackView: View {
     
     private var releaseAndRating: some View {
         HStack(){
+            Image(systemName: "calendar")
+                .foregroundColor(.white)
             Text("Release year:")
                 .foregroundColor(.white)
                 .font(Font.custom("SFProRounded-Bold", size: 13))
@@ -51,18 +53,21 @@ struct MovieCardBackView: View {
                 .foregroundColor(.white)
                 .font(Font.custom("SFProRounded-Light", size: 12))
                 Spacer()
+            Image(systemName: "star")
+                .foregroundColor(.white)
             Text("Rating:")
                 .foregroundColor(.white)
                 .font(Font.custom("SFProRounded-Bold", size: 13))
             Text(String(format: "%.1f", movie.voteAverage))
                 .foregroundColor(.white)
                 .font(Font.custom("SFProRounded-Light", size: 12))
-                Spacer()
+            Spacer()
         }
     }
     
     private var details: some View {
         HStack(){
+            Text("🗣️")
             Text("Language:")
                 .foregroundColor(.white)
                 .font(Font.custom("SFProRounded-Bold", size: 13))
@@ -70,16 +75,20 @@ struct MovieCardBackView: View {
                 .foregroundColor(.white)
                 .font(Font.custom("SFProRounded-Light", size: 12))
                 Spacer()
+            Image(systemName: "popcorn")
+                .foregroundColor(.white)
             Text("Genre:")
                 .foregroundColor(.white)
                 .font(Font.custom("SFProRounded-Bold", size: 13))
-
             ForEach(movie.genreIds, id: \.self) { genre in
-                Text("\(genre)")
-                    .foregroundColor(.white)
+                VStack {
+                    Text("\(genre)")
+                        .foregroundColor(.white)
                     .font(Font.custom("SFProRounded-Light", size: 12))
+                }
             }
         }
+        
     }
     
     private var whereToWatch: some View {
