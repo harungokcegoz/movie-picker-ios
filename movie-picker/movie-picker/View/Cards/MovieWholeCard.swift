@@ -33,6 +33,7 @@ struct MovieWholeCard: View {
         .onTapGesture {
             flipCard ()
         }
+        .animation(.spring)
     }
     
     //MARK: Utils Functions
