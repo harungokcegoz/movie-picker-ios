@@ -59,28 +59,10 @@ struct MovieListView: View {
     
     private var movieStack: some View {
         ForEach(viewModel.movies) { movie in
-            MovieCardFrontView(movie: movie)
+            MovieWholeCard(movie: movie)
         }
     }
-    
-    private func flipCard () {
-        isFlipped = !isFlipped
-        if isFlipped {
-            withAnimation(.linear(duration: durationAndDelay)) {
-                backDegree = 90
-            }
-            withAnimation(.linear(duration: durationAndDelay).delay(durationAndDelay)){
-                frontDegree = 0
-            }
-        } else {
-            withAnimation(.linear(duration: durationAndDelay)) {
-                frontDegree = -90
-            }
-            withAnimation(.linear(duration: durationAndDelay).delay(durationAndDelay)){
-                backDegree = 0
-            }
-        }
-    }
+
 }
 
 

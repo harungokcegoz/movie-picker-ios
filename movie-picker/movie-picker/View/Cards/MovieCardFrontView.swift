@@ -2,14 +2,10 @@ import SwiftUI
 
 struct MovieCardFrontView: View {
     let movie: MovieModel
+    let cardHeight: CGFloat
+    let cardWidth: CGFloat
     
-    @State private var offset = CGSize.zero
-    @State private var notification: String?
-    @State private var notificationColor: Color?
-    @State private var isNotificationVisible: Bool? = false
-    @State private var rotation: Double = 0.0
-    @State private var cardHeight: CGFloat = 400
-    @State private var cardWidth: CGFloat = 250
+    @Binding var degree : Double
     
     var body: some View {
         VStack {
@@ -17,16 +13,13 @@ struct MovieCardFrontView: View {
             cardContent
         }
         .padding(.top, 40)
+        .rotation3DEffect(Angle(degrees: degree), axis: (x: 0, y: 1, z: 0))
     }
     
     private var cardContent: some View {
         ZStack {
             posterImage
-//            rotatingGradient
         }
-        .offset(x: offset.width, y: offset.height * 0.4)
-        .rotationEffect(.degrees(Double(offset.width / 40)))
-        .gesture(dragGesture)
         .padding(.vertical, 20)
 
     }
@@ -41,95 +34,6 @@ struct MovieCardFrontView: View {
         .cornerRadius(20)
     }
     
-//    private var rotatingGradient: some View {
-//        RoundedRectangle(cornerRadius: 20, style: .continuous)
-//            .frame(width: cardWidth - 150, height: cardHeight + 150)
-//            .foregroundStyle(
-//                LinearGradient(
-//                    gradient: Gradient(colors: [
-//                        Color("icon-orange").opacity(0.1),
-//                        Color("icon-orange"),
-//                        Color("icon-orange"),
-//                        Color("icon-orange").opacity(0.1)
-//                    ]),
-//                    startPoint: .top,
-//                    endPoint: .bottom
-//                )
-//            )
-//            .rotationEffect(.degrees(rotation))
-//            .mask(
-//                RoundedRectangle(cornerRadius: 20, style: .continuous)
-//                    .stroke(lineWidth: 3)
-//                    .frame(width: cardWidth + 1, height: cardHeight + 1)
-//            )
-//    }
-    
-    private var dragGesture: some Gesture {
-        DragGesture()
-            .onChanged { gesture in
-                offset = gesture.translation
-                updateNotification(width: offset.width)
-            }
-            .onEnded { _ in
-                withAnimation(.easeOut(duration: 0.2)) {
-                    swipeCard(width: offset.width)
-                    updateNotification(width: offset.width)
-                }
-            }
-    }
-    
-    private var notificationView: some View {
-        ZStack {
-            Text(notification ?? "")
-                .font(.subheadline)
-                .foregroundColor(.white)
-        }
-        .opacity(isNotificationVisible ?? false ? 1 : 0)
-    }
-    
-    private func swipeCard(width: CGFloat) {
-        switch width {
-        case -500...(-150):
-            offset = CGSize(width: -500, height: 0)
-        case 150...500:
-            offset = CGSize(width: 500, height: 0)
-        default:
-            offset = .zero
-        }
-    }
-    
-    private func updateNotification(width: CGFloat) {
-        clearNotifications()
-        switch width {
-            case -500...(-80):
-                notification = "Skipped!"
-                notificationColor = .red
-                isNotificationVisible = true
-            case 80...500:
-                notification = "Added to favorites!"
-                notificationColor = .green
-                isNotificationVisible = true
-            default:
-                notification = nil
-                notificationColor = nil
-                isNotificationVisible = false
-        }
-    }
-    
-//    private func startRotating() {
-//        let timer = Timer.scheduledTimer(withTimeInterval: 0.04, repeats: true) { _ in
-//            withAnimation(.linear(duration: 0.04)) {
-//                rotation += 3
-//            }
-//        }
-//        RunLoop.current.add(timer, forMode: .common)
-//    }
-    
-    private func clearNotifications() {
-        notification = nil
-        notificationColor = nil
-        isNotificationVisible = false
-    }
 }
 
 struct MovieCardFrontView_Previews: PreviewProvider {
@@ -147,7 +51,7 @@ struct MovieCardFrontView_Previews: PreviewProvider {
                 adult: false,
                 genreIds: [1, 2, 3],
                 originalLanguage: "en"
-            )
+            ), cardHeight: 400, cardWidth: 250, degree: .constant(0)
         )
     }
 }

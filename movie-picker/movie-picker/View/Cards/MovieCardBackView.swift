@@ -2,22 +2,24 @@ import SwiftUI
 
 struct MovieCardBackView: View {
     let movie: MovieModel
-    
-    @State private var cardHeight: CGFloat = 400
-    @State private var cardWidth: CGFloat = 250
+    let cardHeight: CGFloat
+    let cardWidth: CGFloat
+
+    @Binding var degree : Double
     
     var body: some View {
         VStack {
             title.padding()
-            overview.padding(.leading)
+            overview.padding(.leading).padding(.vertical)
             releaseAndRating.padding(.top)
             details
-            whereToWatch
+            whereToWatch.padding(.top, 10)
         }
         .padding(20)
         .frame(width: cardWidth, height: cardHeight)
-        .background(.black.opacity(0.8))
+        .background(.black)
         .cornerRadius(20)
+        .rotation3DEffect(Angle(degrees: degree), axis: (x: 0, y: 1, z: 0))
     }
 
     //MARK: Props
@@ -26,7 +28,7 @@ struct MovieCardBackView: View {
             Spacer()
             Text(movie.title)
                 .foregroundColor(.white)
-                .font(Font.custom("SFProRounded-Bold", size: 16))
+                .font(Font.custom("SFProRounded-Bold", size: 20))
             Spacer()
         }
     }
@@ -35,7 +37,7 @@ struct MovieCardBackView: View {
         HStack{
             Text(movie.overview)
                 .foregroundColor(.white)
-                .font(Font.custom("SFProRounded-Light", size: 14))
+                .font(Font.custom("SFProRounded-Light", size: 15))
                 Spacer()
         }
     }
@@ -136,7 +138,7 @@ struct MovieCardBackView_Previews: PreviewProvider {
                 adult: false,
                 genreIds: [1, 2, 3],
                 originalLanguage: "en"
-            )
+            ), cardHeight: 400 *  1.1, cardWidth: 250 * 1.2, degree: .constant(0)
         )
     }
 }
