@@ -42,10 +42,10 @@ struct CustomTabBar: View {
     
     private func fillImage(for tab: Tab) -> String {
         switch tab {
-        case .house: return "house.fill"
-        case .shuffle: return "shuffle"
-        case .star: return "star.fill"
-        case .person: return "person.fill"
+            case .house: return "house.fill"
+            case .shuffle: return "shuffle"
+            case .star: return "star.fill"
+            case .person: return "person.fill"
         }
     }
 }
@@ -58,7 +58,7 @@ extension View {
             .cornerRadius(10)
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color("imdb-yellow"), lineWidth: 0.3)
+                    .stroke(Color("imdb-yellow").opacity(0.2), lineWidth: 2)
             )
             .shadow(radius: 5)
             .padding(.horizontal, 20)
