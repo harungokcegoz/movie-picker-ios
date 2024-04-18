@@ -4,16 +4,23 @@ struct MovieCardBackView: View {
     let movie: MovieModel
     let cardHeight: CGFloat
     let cardWidth: CGFloat
-
+    
     @Binding var degree : Double
     
     var body: some View {
         VStack {
-            title.padding()
-            overview.padding(.leading).padding(.vertical)
-            releaseAndRating.padding(.top)
-            details
-            whereToWatch.padding(.top, 10)
+            title
+            overview
+                .padding(.leading)
+                .frame(height: 180)
+            HStack {
+                yearRatingLanguage
+            }
+            .padding(.horizontal)
+            genre
+                .padding(.top, 25)
+            whereToWatch
+                .padding(.top, 10)
         }
         .padding(20)
         .frame(width: cardWidth, height: cardHeight)
@@ -21,95 +28,133 @@ struct MovieCardBackView: View {
         .cornerRadius(20)
         .rotation3DEffect(Angle(degrees: degree), axis: (x: 0, y: 1, z: 0))
     }
-
+    
     //MARK: Props
     private var title: some View {
         HStack {
             Spacer()
             Text(movie.title)
-                .foregroundColor(.white)
+                .foregroundColor(.iconOrange)
                 .font(Font.custom("SFProRounded-Bold", size: 20))
             Spacer()
         }
     }
+    
     
     private var overview: some View {
         HStack{
             Text(movie.overview)
                 .foregroundColor(.white)
                 .font(Font.custom("SFProRounded-Light", size: 15))
-                Spacer()
+            Spacer()
         }
     }
     
-    private var releaseAndRating: some View {
+    private var yearRatingLanguage: some View {
         HStack(){
+            Spacer()
             Image(systemName: "calendar")
-                .foregroundColor(.white)
-            Text("Release year:")
-                .foregroundColor(.white)
-                .font(Font.custom("SFProRounded-Bold", size: 13))
+                .foregroundColor(.iconOrange)
             Text(date)
                 .foregroundColor(.white)
                 .font(Font.custom("SFProRounded-Light", size: 12))
-                Spacer()
+            Spacer()
             Image(systemName: "star")
-                .foregroundColor(.white)
-            Text("Rating:")
-                .foregroundColor(.white)
-                .font(Font.custom("SFProRounded-Bold", size: 13))
+                .foregroundColor(.iconOrange)
             Text(String(format: "%.1f", movie.voteAverage))
+                .foregroundColor(.white)
+                .font(Font.custom("SFProRounded-Light", size: 12))
+            Spacer()
+            Image(systemName: "globe")
+                .foregroundColor(.iconOrange)
+            Text(movie.originalLanguage.uppercased())
                 .foregroundColor(.white)
                 .font(Font.custom("SFProRounded-Light", size: 12))
             Spacer()
         }
     }
     
-    private var details: some View {
+    private var genre: some View {
         HStack(){
-            Text("🗣️")
-            Text("Language:")
-                .foregroundColor(.white)
-                .font(Font.custom("SFProRounded-Bold", size: 13))
-            Text(movie.originalLanguage.uppercased())
+            //            ForEach(movie.genreIds, id: \.self) { genre in
+            //                VStack {
+            //                    Text("\(genre)")
+            //                        .foregroundColor(.white)
+            //                    .font(Font.custom("SFProRounded-Light", size: 12))
+            //                }
+            //            }
+            Text("Action")
                 .foregroundColor(.white)
                 .font(Font.custom("SFProRounded-Light", size: 12))
-                Spacer()
-            Image(systemName: "popcorn")
+                .padding(8)
+                .overlay(content: {
+                    RoundedRectangle(cornerRadius: 15)
+                        .stroke(.iconOrange, lineWidth: 1)
+                })
+            Text("Romantic")
                 .foregroundColor(.white)
-            Text("Genre:")
+                .font(Font.custom("SFProRounded-Light", size: 12))
+                .padding(8)
+                .overlay(content: {
+                    RoundedRectangle(cornerRadius: 15)
+                        .stroke(.iconOrange, lineWidth: 1)
+                })
+            Text("Drama")
                 .foregroundColor(.white)
-                .font(Font.custom("SFProRounded-Bold", size: 13))
-            ForEach(movie.genreIds, id: \.self) { genre in
-                VStack {
-                    Text("\(genre)")
-                        .foregroundColor(.white)
-                    .font(Font.custom("SFProRounded-Light", size: 12))
-                }
-            }
+                .font(Font.custom("SFProRounded-Light", size: 12))
+                .padding(8)
+                .overlay(content: {
+                    RoundedRectangle(cornerRadius: 15)
+                        .stroke(.iconOrange, lineWidth: 1)
+                })
         }
         
     }
     
     private var whereToWatch: some View {
         VStack {
+            HStack{
+                Text("Trailer")
+                    .foregroundColor(.white)
+                    .font(Font.custom("SFProRounded-Light", size: 12))
+                Image("youtube-icon")
+                    .resizable()
+                    .frame(width: 35, height: 35)
+                    .cornerRadius(15)
+                    .overlay(content: {
+                        RoundedRectangle(cornerRadius: 15)
+                            .stroke(.gray, lineWidth: 1)
+                    })
+            }
             Text("Where to watch")
-                .foregroundColor(.white)
+                .foregroundColor(.iconOrange)
                 .font(Font.custom("SFProRounded-Bold", size: 13))
                 .padding(5)
             HStack {
                 Image("netflix-icon")
                     .resizable()
-                    .frame(width: 30, height: 30)
-                    .cornerRadius(20)
+                    .frame(width: 35, height: 35)
+                    .cornerRadius(15)
+                    .overlay(content: {
+                        RoundedRectangle(cornerRadius: 15)
+                            .stroke(.gray, lineWidth: 1)
+                    })
                 Image("prime-video-icon")
                     .resizable()
-                    .frame(width: 30, height: 30)
-                    .cornerRadius(20)
+                    .frame(width: 35, height: 35)
+                    .cornerRadius(15)
+                    .overlay(content: {
+                        RoundedRectangle(cornerRadius: 15)
+                            .stroke(.gray, lineWidth: 1)
+                    })
                 Image("hulu-icon")
                     .resizable()
-                    .frame(width: 30, height: 30)
-                    .cornerRadius(20)
+                    .frame(width: 35, height: 35)
+                    .cornerRadius(15)
+                    .overlay(content: {
+                        RoundedRectangle(cornerRadius: 15)
+                            .stroke(.gray, lineWidth: 1)
+                    })
             }
         }
     }
@@ -124,11 +169,11 @@ struct MovieCardBackView: View {
             let year = calendar.component(.year, from: date)
             return "\(year)"
         } else {
-           return "N/A"
+            return "N/A"
         }
     }
     
-
+    
     
 }
 
@@ -147,7 +192,7 @@ struct MovieCardBackView_Previews: PreviewProvider {
                 adult: false,
                 genreIds: [1, 2, 3],
                 originalLanguage: "en"
-            ), cardHeight: 400 *  1.1, cardWidth: 250 * 1.2, degree: .constant(0)
+            ), cardHeight: 450 *  1.1, cardWidth: 250 * 1.2, degree: .constant(0)
         )
     }
 }

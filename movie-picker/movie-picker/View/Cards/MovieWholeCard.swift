@@ -25,7 +25,7 @@ struct MovieWholeCard: View {
     var body: some View {
         ZStack {
             MovieCardFrontView(movie: movie, cardHeight: cardHeight, cardWidth: cardWidth, degree: $backDegree)
-            MovieCardBackView(movie: movie, cardHeight: cardHeight * 1.1, cardWidth: cardWidth * 1.2,  degree: $frontDegree)
+            MovieCardBackView(movie: movie, cardHeight: cardHeight * 1.2, cardWidth: cardWidth * 1.2,  degree: $frontDegree)
         }
         .offset(x: offset.width, y: offset.height * 0.4)
         .rotationEffect(.degrees(Double(offset.width / 40)))
@@ -33,7 +33,6 @@ struct MovieWholeCard: View {
         .onTapGesture {
             flipCard ()
         }
-        .animation(.spring)
     }
     
     //MARK: Utils Functions
