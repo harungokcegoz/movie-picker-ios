@@ -67,6 +67,7 @@ extension Bundle {
 
 class MovieViewModel: ObservableObject {
     @Published var movies: [MovieModel] = []
+    @Published var sheetMovie: MovieModel? = nil
     
     let headers = [
         "X-RapidAPI-Key": "2285790515msh8e72398585d3ec8p1858ddjsnf22bb78122aa",

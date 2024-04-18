@@ -14,6 +14,7 @@ struct HouseView: View {
             HStack {
                 ScrollCardStack(categoryName: "Top Movies", viewModel: MovieViewModel(), degree: 0.0, cardHeight: 180, cardWidth: 120)
             }
+            .padding(.top, 10)
             HStack {
                 ScrollCardStack(categoryName: "Recently Released", viewModel: MovieViewModel(), degree: 0.0, cardHeight: 180, cardWidth: 120)
             }

@@ -26,12 +26,17 @@ struct ScrollCardStack: View {
                             Spacer()
                         }
                         .frame(width: cardWidth, height: cardHeight * 1.7)
+                        .sheet(item: $viewModel.sheetMovie, onDismiss: nil){
+                            movie in
+                            ScrollCardDetailView(movie: movie, vm: viewModel)
+                        }
+                        .onTapGesture {
+                            viewModel.sheetMovie = movie
+                        }
                     }
                 }
-    
+                .padding(.horizontal)
             }
-
-            .padding(.leading)
         }
         .onAppear {
             Task {

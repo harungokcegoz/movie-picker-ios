@@ -18,9 +18,9 @@
 		4A3DEB962BBC410C0004BECE /* MovieModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3DEB952BBC410C0004BECE /* MovieModelView.swift */; };
 		4A3DEB992BBC47850004BECE /* MovieCardFrontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3DEB982BBC47850004BECE /* MovieCardFrontView.swift */; };
 		4A3DEB9B2BBC47AC0004BECE /* MovieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3DEB9A2BBC47AC0004BECE /* MovieListView.swift */; };
-		4A3DEB9D2BBC49840004BECE /* MovieDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3DEB9C2BBC49840004BECE /* MovieDetailsView.swift */; };
 		4A6995282BD196F70088CE3D /* ScrollCardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6995272BD196F70088CE3D /* ScrollCardStack.swift */; };
 		4A69952A2BD1A3490088CE3D /* ScrollCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6995292BD1A3490088CE3D /* ScrollCard.swift */; };
+		4A69952F2BD1C6900088CE3D /* ScrollCardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69952E2BD1C6900088CE3D /* ScrollCardDetailView.swift */; };
 		4A78E1252BC5E6B200F51BCC /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A78E1242BC5E6B200F51BCC /* CustomTabBar.swift */; };
 		4A78E1282BC5ED1900F51BCC /* ShuffleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A78E1272BC5ED1900F51BCC /* ShuffleView.swift */; };
 		4A78E12A2BC5F2B700F51BCC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A78E1292BC5F2B700F51BCC /* ContentView.swift */; };
@@ -74,9 +74,9 @@
 		4A3DEB952BBC410C0004BECE /* MovieModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModelView.swift; sourceTree = "<group>"; };
 		4A3DEB982BBC47850004BECE /* MovieCardFrontView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCardFrontView.swift; sourceTree = "<group>"; };
 		4A3DEB9A2BBC47AC0004BECE /* MovieListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListView.swift; sourceTree = "<group>"; };
-		4A3DEB9C2BBC49840004BECE /* MovieDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsView.swift; sourceTree = "<group>"; };
 		4A6995272BD196F70088CE3D /* ScrollCardStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollCardStack.swift; sourceTree = "<group>"; };
 		4A6995292BD1A3490088CE3D /* ScrollCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollCard.swift; sourceTree = "<group>"; };
+		4A69952E2BD1C6900088CE3D /* ScrollCardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollCardDetailView.swift; sourceTree = "<group>"; };
 		4A78E1242BC5E6B200F51BCC /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		4A78E1272BC5ED1900F51BCC /* ShuffleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleView.swift; sourceTree = "<group>"; };
 		4A78E1292BC5F2B700F51BCC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -228,6 +228,7 @@
 			children = (
 				4A6995272BD196F70088CE3D /* ScrollCardStack.swift */,
 				4A6995292BD1A3490088CE3D /* ScrollCard.swift */,
+				4A69952E2BD1C6900088CE3D /* ScrollCardDetailView.swift */,
 			);
 			path = CardsScroll;
 			sourceTree = "<group>";
@@ -237,7 +238,6 @@
 			children = (
 				4A3DEB982BBC47850004BECE /* MovieCardFrontView.swift */,
 				4A3DEB9A2BBC47AC0004BECE /* MovieListView.swift */,
-				4A3DEB9C2BBC49840004BECE /* MovieDetailsView.swift */,
 				4A803B172BCEE3E5007B7AD1 /* MovieCardBackView.swift */,
 				4A81984C2BD05B4800A858BF /* MovieWholeCard.swift */,
 			);
@@ -440,8 +440,8 @@
 				4AE1B2232BCC7F3200B56040 /* Header.swift in Sources */,
 				4A3DEB942BBC40660004BECE /* MovieModel.swift in Sources */,
 				4A803B182BCEE3E5007B7AD1 /* MovieCardBackView.swift in Sources */,
+				4A69952F2BD1C6900088CE3D /* ScrollCardDetailView.swift in Sources */,
 				4A78E1282BC5ED1900F51BCC /* ShuffleView.swift in Sources */,
-				4A3DEB9D2BBC49840004BECE /* MovieDetailsView.swift in Sources */,
 				4A073AD72BCDDF2600492C5B /* Loading.swift in Sources */,
 				4A78E1252BC5E6B200F51BCC /* CustomTabBar.swift in Sources */,
 				4A3DEB992BBC47850004BECE /* MovieCardFrontView.swift in Sources */,

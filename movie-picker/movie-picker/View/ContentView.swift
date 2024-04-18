@@ -9,6 +9,10 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
+            Color.bgBlack
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                .ignoresSafeArea()
+            
             VStack {
                 Header()
                     .zIndex(1)
@@ -24,7 +28,7 @@ struct ContentView: View {
                     case .person:
                         PersonView()
                 }
-            
+            Spacer()
             }
             
             VStack {
@@ -34,8 +38,6 @@ struct ContentView: View {
                     .padding(.bottom, 30)
             }
         }
-        .frame(height: UIScreen.main.bounds.height)
-        .background(Color("bg-black"))
         .edgesIgnoringSafeArea(.all)
     }
 }
