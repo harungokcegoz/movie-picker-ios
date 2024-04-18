@@ -1,19 +1,3 @@
-// Mock Movie data
-//adult:false
-//backdrop_path:"https://image.tmdb.org/t/p/original/oFS0DgInCdvYRwaPkl3BLpmIuq5.jpg"
-//genre_ids:
-//id:1013240
-//original_language:"id"
-//original_title:"24 Jam Bersama Gaspar"
-//overview:"With only 24 hours left to live, a private investigator follows a trail of confounding clues to uncover the disappearance of his childhood friend."
-//popularity:658.56
-//poster_path:"https://image.tmdb.org/t/p/original/8jJKM0ZR3GQo6E3CUkMKKVa4S8B.jpg"
-//release_date:"2023-10-06"
-//title:"24 Hours with Gaspar"
-//video:false
-//vote_average:6.611
-//vote_count:27
-
 struct MovieResponse: Decodable, Encodable {
     let page: Int
     let results: [MovieModel]

@@ -208,10 +208,10 @@
 		4A3DEB972BBC47580004BECE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4A78E1292BC5F2B700F51BCC /* ContentView.swift */,
 				4A073AD32BCDCF8200492C5B /* Atoms */,
 				4AE1B2212BCC7F2400B56040 /* Header */,
 				4A99808A2BC5F3AE0017E183 /* Routes */,
-				4A78E1292BC5F2B700F51BCC /* ContentView.swift */,
 				4A78E1232BC5E6A100F51BCC /* NavigationBar */,
 				4A78E1222BC5E41C00F51BCC /* Cards */,
 			);
