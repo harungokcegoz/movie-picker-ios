@@ -30,6 +30,7 @@ struct ScrollCardStack: View {
                 }
     
             }
+
             .padding(.leading)
         }
         .onAppear {
@@ -37,7 +38,6 @@ struct ScrollCardStack: View {
                 await viewModel.fetchMovies()
             }
         }
-    
     }
 }
 

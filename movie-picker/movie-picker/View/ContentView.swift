@@ -8,12 +8,13 @@ struct ContentView: View {
     }
     
     var body: some View {
-        VStack {
-            Header()
-            
-            ZStack {
-                VStack {
-                    switch tabSelected {
+        ZStack {
+            VStack {
+                Header()
+                    .zIndex(1)
+                    .padding(.top, 55)
+                
+                switch tabSelected {
                     case .house:
                         HouseView()
                     case .shuffle:
@@ -22,16 +23,20 @@ struct ContentView: View {
                         StarView()
                     case .person:
                         PersonView()
-                    }
                 }
+            
             }
-        
-            CustomTabBar(selectedTab: $tabSelected)
-                .padding(.top, 50)
+            
+            VStack {
+                Spacer()
+                CustomTabBar(selectedTab: $tabSelected)
+                    .zIndex(1)
+                    .padding(.bottom, 30)
+            }
         }
         .frame(height: UIScreen.main.bounds.height)
         .background(Color("bg-black"))
-        .ignoresSafeArea()
+        .edgesIgnoringSafeArea(.all)
     }
 }
 

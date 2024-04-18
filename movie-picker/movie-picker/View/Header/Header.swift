@@ -5,18 +5,11 @@ struct Header: View {
         VStack {
             Image("logo")
                 .resizable()
-                .scaledToFit()
                 .frame(width: 200, height: 50)
-                .padding(.vertical, 15)
-                .overlay(
-                    Rectangle()
-                        .frame(width: 500, height: 0.5)
-                        .opacity(0.5)
-                        .foregroundColor(.gray)
-                        .padding(.horizontal, -20),
-                    alignment: .bottom
-                )
-                .shadow(radius: 10)
+                .padding(.top, 10)
+            Divider()
+                .frame(height: 1)
+                .background(.gray.opacity(0.3))
         }
     }
 }

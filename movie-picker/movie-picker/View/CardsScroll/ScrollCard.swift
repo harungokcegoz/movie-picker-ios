@@ -11,19 +11,27 @@ struct ScrollCard: View {
             posterImage
             HStack {
                 Image(systemName: "star.fill")
-                    .foregroundColor(.imdbYellow)
-                .font(.system(size: 15))
+                    .resizable()
+                    .frame(width: 12, height: 12)
+                    .foregroundColor(.iconOrange)
                 Text(String(format: "%.1f", movie.voteAverage))
-                    .font(.custom("SFProRounded-Regular", size: 15))
+                    .font(.custom("SFProRounded-Regular", size: 13))
                     .foregroundColor(.white)
                 Spacer()
+                Image(systemName: "calendar")
+                    .resizable()
+                    .frame(width: 12, height: 12)
+                    .foregroundColor(.iconOrange)
+                Text(getYear(movie: movie))
+                    .font(.custom("SFProRounded-Regular", size: 13))
+                    .foregroundColor(.white)
             }
+            .padding(.top, 2)
             .padding(.horizontal, 5)
             Text(movie.title)
                 .font(.custom("SFProRounded-Regular", size: 15))
                 .foregroundColor(.white)
             Spacer()
-      
         }
 
     }
@@ -38,6 +46,18 @@ struct ScrollCard: View {
         .cornerRadius(10)
         .shadow(color: .imdbYellow.opacity(0.1) ,radius: 5, x: 0, y: 2)
         .padding(.top)
+    }
+    
+    private func getYear(movie: MovieModel) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        if let date = dateFormatter.date(from: movie.releaseDate) {
+            let calendar = Calendar.current
+            let year = calendar.component(.year, from: date)
+            return "\(year)"
+        } else {
+            return "N/A"
+        }
     }
     
 }
