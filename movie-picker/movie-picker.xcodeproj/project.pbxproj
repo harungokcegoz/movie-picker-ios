@@ -19,6 +19,8 @@
 		4A3DEB992BBC47850004BECE /* MovieCardFrontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3DEB982BBC47850004BECE /* MovieCardFrontView.swift */; };
 		4A3DEB9B2BBC47AC0004BECE /* MovieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3DEB9A2BBC47AC0004BECE /* MovieListView.swift */; };
 		4A3DEB9D2BBC49840004BECE /* MovieDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3DEB9C2BBC49840004BECE /* MovieDetailsView.swift */; };
+		4A6995282BD196F70088CE3D /* ScrollCardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6995272BD196F70088CE3D /* ScrollCardStack.swift */; };
+		4A69952A2BD1A3490088CE3D /* ScrollCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6995292BD1A3490088CE3D /* ScrollCard.swift */; };
 		4A78E1252BC5E6B200F51BCC /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A78E1242BC5E6B200F51BCC /* CustomTabBar.swift */; };
 		4A78E1282BC5ED1900F51BCC /* ShuffleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A78E1272BC5ED1900F51BCC /* ShuffleView.swift */; };
 		4A78E12A2BC5F2B700F51BCC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A78E1292BC5F2B700F51BCC /* ContentView.swift */; };
@@ -73,6 +75,8 @@
 		4A3DEB982BBC47850004BECE /* MovieCardFrontView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCardFrontView.swift; sourceTree = "<group>"; };
 		4A3DEB9A2BBC47AC0004BECE /* MovieListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListView.swift; sourceTree = "<group>"; };
 		4A3DEB9C2BBC49840004BECE /* MovieDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsView.swift; sourceTree = "<group>"; };
+		4A6995272BD196F70088CE3D /* ScrollCardStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollCardStack.swift; sourceTree = "<group>"; };
+		4A6995292BD1A3490088CE3D /* ScrollCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollCard.swift; sourceTree = "<group>"; };
 		4A78E1242BC5E6B200F51BCC /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		4A78E1272BC5ED1900F51BCC /* ShuffleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleView.swift; sourceTree = "<group>"; };
 		4A78E1292BC5F2B700F51BCC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -208,17 +212,27 @@
 		4A3DEB972BBC47580004BECE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4A6995252BD196B00088CE3D /* CardsScroll */,
 				4A78E1292BC5F2B700F51BCC /* ContentView.swift */,
 				4A073AD32BCDCF8200492C5B /* Atoms */,
 				4AE1B2212BCC7F2400B56040 /* Header */,
 				4A99808A2BC5F3AE0017E183 /* Routes */,
 				4A78E1232BC5E6A100F51BCC /* NavigationBar */,
-				4A78E1222BC5E41C00F51BCC /* Cards */,
+				4A78E1222BC5E41C00F51BCC /* ShuffleCards */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		4A78E1222BC5E41C00F51BCC /* Cards */ = {
+		4A6995252BD196B00088CE3D /* CardsScroll */ = {
+			isa = PBXGroup;
+			children = (
+				4A6995272BD196F70088CE3D /* ScrollCardStack.swift */,
+				4A6995292BD1A3490088CE3D /* ScrollCard.swift */,
+			);
+			path = CardsScroll;
+			sourceTree = "<group>";
+		};
+		4A78E1222BC5E41C00F51BCC /* ShuffleCards */ = {
 			isa = PBXGroup;
 			children = (
 				4A3DEB982BBC47850004BECE /* MovieCardFrontView.swift */,
@@ -227,7 +241,7 @@
 				4A803B172BCEE3E5007B7AD1 /* MovieCardBackView.swift */,
 				4A81984C2BD05B4800A858BF /* MovieWholeCard.swift */,
 			);
-			path = Cards;
+			path = ShuffleCards;
 			sourceTree = "<group>";
 		};
 		4A78E1232BC5E6A100F51BCC /* NavigationBar */ = {
@@ -421,6 +435,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A6995282BD196F70088CE3D /* ScrollCardStack.swift in Sources */,
+				4A69952A2BD1A3490088CE3D /* ScrollCard.swift in Sources */,
 				4AE1B2232BCC7F3200B56040 /* Header.swift in Sources */,
 				4A3DEB942BBC40660004BECE /* MovieModel.swift in Sources */,
 				4A803B182BCEE3E5007B7AD1 /* MovieCardBackView.swift in Sources */,

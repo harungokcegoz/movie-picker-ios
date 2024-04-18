@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var tabSelected: Tab = .shuffle
+    @State private var tabSelected: Tab = .house
     
     init() {
         UITabBar.appearance().isHidden = true
