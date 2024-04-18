@@ -33,7 +33,7 @@ extension ScrollCardDetailView {
             posterImage
             posterImage
         }
-        .frame(height: 550)
+        .frame(height: 530)
         .tabViewStyle(PageTabViewStyle())
     }
     
