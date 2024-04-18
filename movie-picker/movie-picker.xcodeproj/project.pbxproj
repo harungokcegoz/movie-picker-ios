@@ -21,6 +21,7 @@
 		4A6995282BD196F70088CE3D /* ScrollCardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6995272BD196F70088CE3D /* ScrollCardStack.swift */; };
 		4A69952A2BD1A3490088CE3D /* ScrollCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6995292BD1A3490088CE3D /* ScrollCard.swift */; };
 		4A69952F2BD1C6900088CE3D /* ScrollCardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69952E2BD1C6900088CE3D /* ScrollCardDetailView.swift */; };
+		4A6995342BD1DBD70088CE3D /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6995332BD1DBD70088CE3D /* SplashScreenView.swift */; };
 		4A78E1252BC5E6B200F51BCC /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A78E1242BC5E6B200F51BCC /* CustomTabBar.swift */; };
 		4A78E1282BC5ED1900F51BCC /* ShuffleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A78E1272BC5ED1900F51BCC /* ShuffleView.swift */; };
 		4A78E12A2BC5F2B700F51BCC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A78E1292BC5F2B700F51BCC /* ContentView.swift */; };
@@ -77,6 +78,7 @@
 		4A6995272BD196F70088CE3D /* ScrollCardStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollCardStack.swift; sourceTree = "<group>"; };
 		4A6995292BD1A3490088CE3D /* ScrollCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollCard.swift; sourceTree = "<group>"; };
 		4A69952E2BD1C6900088CE3D /* ScrollCardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollCardDetailView.swift; sourceTree = "<group>"; };
+		4A6995332BD1DBD70088CE3D /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		4A78E1242BC5E6B200F51BCC /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		4A78E1272BC5ED1900F51BCC /* ShuffleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleView.swift; sourceTree = "<group>"; };
 		4A78E1292BC5F2B700F51BCC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				4A99808A2BC5F3AE0017E183 /* Routes */,
 				4A78E1232BC5E6A100F51BCC /* NavigationBar */,
 				4A78E1222BC5E41C00F51BCC /* ShuffleCards */,
+				4A6995332BD1DBD70088CE3D /* SplashScreenView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 				4A78E1252BC5E6B200F51BCC /* CustomTabBar.swift in Sources */,
 				4A3DEB992BBC47850004BECE /* MovieCardFrontView.swift in Sources */,
 				4A81984D2BD05B4800A858BF /* MovieWholeCard.swift in Sources */,
+				4A6995342BD1DBD70088CE3D /* SplashScreenView.swift in Sources */,
 				4A99808C2BC5F7D00017E183 /* HouseView.swift in Sources */,
 				4A78E12A2BC5F2B700F51BCC /* ContentView.swift in Sources */,
 				4A3DEB672BBC339A0004BECE /* movie_pickerApp.swift in Sources */,

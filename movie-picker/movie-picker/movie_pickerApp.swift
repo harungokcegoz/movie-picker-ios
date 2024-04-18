@@ -4,7 +4,7 @@ import SwiftUI
 struct movie_pickerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashScreenView()
         }
     }
 }
