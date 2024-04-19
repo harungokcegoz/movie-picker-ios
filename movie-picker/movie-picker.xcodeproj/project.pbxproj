@@ -41,6 +41,7 @@
 		4A99808E2BC5F7EC0017E183 /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A99808D2BC5F7EC0017E183 /* StarView.swift */; };
 		4A9980902BC5F7FE0017E183 /* PersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A99808F2BC5F7FE0017E183 /* PersonView.swift */; };
 		4A9980932BC60A4F0017E183 /* MockData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A9980922BC60A4F0017E183 /* MockData.json */; };
+		4AC0F80E2BD2EC310063CDFE /* YouTubeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC0F80D2BD2EC310063CDFE /* YouTubeSheet.swift */; };
 		4AE1B2232BCC7F3200B56040 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE1B2222BCC7F3200B56040 /* Header.swift */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,7 @@
 		4A99808D2BC5F7EC0017E183 /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
 		4A99808F2BC5F7FE0017E183 /* PersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonView.swift; sourceTree = "<group>"; };
 		4A9980922BC60A4F0017E183 /* MockData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockData.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
+		4AC0F80D2BD2EC310063CDFE /* YouTubeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeSheet.swift; sourceTree = "<group>"; };
 		4AE1B2222BCC7F3200B56040 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				4A073AD62BCDDF2600492C5B /* Loading.swift */,
+				4AC0F80D2BD2EC310063CDFE /* YouTubeSheet.swift */,
 			);
 			path = Atoms;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				4A78E1252BC5E6B200F51BCC /* CustomTabBar.swift in Sources */,
 				4A3DEB992BBC47850004BECE /* MovieCardFrontView.swift in Sources */,
 				4A81984D2BD05B4800A858BF /* MovieWholeCard.swift in Sources */,
+				4AC0F80E2BD2EC310063CDFE /* YouTubeSheet.swift in Sources */,
 				4A6995342BD1DBD70088CE3D /* SplashScreenView.swift in Sources */,
 				4A99808C2BC5F7D00017E183 /* HouseView.swift in Sources */,
 				4A78E12A2BC5F2B700F51BCC /* ContentView.swift in Sources */,

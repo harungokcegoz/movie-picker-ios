@@ -4,10 +4,8 @@ struct ScrollCardStack: View {
     let categoryName: String
     let cardStackType: CardStackType
     
-    private let trailerCardHeight: CGFloat = 120
-    private let trailerCardWidth: CGFloat = 180
-    private let cardHeight: CGFloat = 180
-    private let cardWidth: CGFloat = 120
+    private let cardHeight: CGFloat = 210
+    private let cardWidth: CGFloat = 150
     
     @ObservedObject var viewModel: MovieViewModel
     
@@ -42,21 +40,25 @@ extension ScrollCardStack {
     
     private var cardScroll: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack(alignment: .top, spacing: 16) {
+            HStack(alignment: .top, spacing: 10) {
                 ForEach(viewModel.movies) { movie in
-                    VStack(spacing: 8) {
+                    VStack {
                         switch cardStackType {
                         case .trailer:
-                            ScrollCard(movie: movie, cardType: .trailer, cardHeight: trailerCardHeight, cardWidth: trailerCardWidth)
+                            ScrollCard(movie: movie, cardType: .trailer, cardHeight: cardHeight, cardWidth: cardWidth)
                         case .movie:
                             ScrollCard(movie: movie, cardType: .movie, cardHeight: cardHeight, cardWidth: cardWidth)
                         }
                         Spacer()
                     }
-                    .frame(width: cardWidth, height: cardHeight * 1.7)
+                    .frame(width: cardWidth, height: cardHeight * 1.5)
                     .sheet(item: $viewModel.sheetMovie, onDismiss: nil){
                         movie in
-                        ScrollCardDetailView(movie: movie, vm: viewModel)
+                        if cardStackType == .trailer {
+                            YouTubeSheet(videoURL: "https://www.youtube.com/watch?v=1ZdlAg3j8nI" , vm: viewModel, movie: movie)
+                        } else {
+                            ScrollCardDetailView(movie: movie, vm: viewModel)
+                        }
                     }
                     .onTapGesture {
                         viewModel.sheetMovie = movie
@@ -68,8 +70,8 @@ extension ScrollCardStack {
     }
 }
 
-#Preview {
-    ScrollCardStack(categoryName: "Top Movies", cardStackType: .trailer, viewModel: MovieViewModel())
-}
+//#Preview {
+//    ScrollCardStack(categoryName: "Top Movies", cardStackType: .trailer, viewModel: MovieViewModel())
+//}
 
 

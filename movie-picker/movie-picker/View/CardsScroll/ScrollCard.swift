@@ -6,15 +6,16 @@ struct ScrollCard: View {
     let cardType: CardType
     let cardHeight: CGFloat
     let cardWidth: CGFloat
-    
+        
     var body: some View {
         switch cardType {
         case .trailer:
-            TrailerCard(movie: movie, cardHeight: cardHeight, cardWidth: cardWidth)
+           trailerCard
         case .movie:
-            MovieCard(movie: movie, cardHeight: cardHeight, cardWidth: cardWidth)
+            movieCard
         }
     }
+    
 }
 
 extension ScrollCard {
@@ -22,46 +23,47 @@ extension ScrollCard {
         case trailer
         case movie
     }
-}
-
-struct TrailerCard: View {
-    let movie: MovieModel
-    let cardHeight: CGFloat
-    let cardWidth: CGFloat
     
-    var body: some View {
-        RoundedRectangle(cornerRadius: 10)
-            .overlay(
-                YouTubePlayerView("https://www.youtube.com/watch?v=odM92ap8_c0")
-            )
-            .frame(width: cardWidth, height: cardHeight)
-    }
-}
-
-struct MovieCard: View {
-    let movie: MovieModel
-    let cardHeight: CGFloat
-    let cardWidth: CGFloat
-    
-    var body: some View {
+    private var trailerCard: some View {
         VStack {
-            posterImage(width: cardWidth, height: cardHeight)
+            ZStack(alignment: .bottomTrailing) {
+                posterImage(movie: movie, width: cardWidth, height: cardHeight)
+                Image(systemName: "play.rectangle.fill")
+                    .resizable()
+                    .frame(width: 30, height: 20)
+                    .foregroundColor(.red)
+                    .background(.white)
+                    .cornerRadius(5)
+                    .padding(.top, 10)
+                    .zIndex(1)
+            }
+            date
+            title
+        }
+    }
+    
+    private var movieCard: some View {
+        VStack {
+            posterImage(movie: movie, width: cardWidth, height: cardHeight)
             dateAndRate
             title
             Spacer()
         }
     }
     
-    private func posterImage(width: CGFloat, height: CGFloat) -> some View {
-        AsyncImage(url: URL(string: movie.posterPath ?? "film")) { image in
-            image.resizable()
-        } placeholder: {
-            ProgressView()
+    private var date: some View {
+        HStack {
+            Image(systemName: "calendar.badge.clock")
+                .resizable()
+                .frame(width: 20, height: 18)
+                .foregroundColor(.iconOrange)
+            Text(movie.releaseDate)
+                .font(.custom("SFProRounded-Regular", size: 13))
+                .foregroundColor(.white)
+            Spacer()
         }
-        .frame(width: width, height: height)
-        .cornerRadius(10)
-        .shadow(color: .imdbYellow.opacity(0.1) ,radius: 5, x: 0, y: 2)
-        .padding(.top)
+        .padding(.leading, 8)
+        .padding(.top, 5)
     }
     
     private var dateAndRate: some View {
@@ -103,24 +105,36 @@ struct MovieCard: View {
             return "N/A"
         }
     }
+    
+    private func posterImage(movie: MovieModel, width: CGFloat, height: CGFloat) -> some View {
+        AsyncImage(url: URL(string: movie.posterPath ?? "film")) { image in
+            image.resizable()
+        } placeholder: {
+            ProgressView()
+        }
+        .frame(width: width, height: height)
+        .cornerRadius(10)
+        .shadow(color: .imdbYellow.opacity(0.1) ,radius: 5, x: 0, y: 2)
+    }
+
 }
 
 
-#Preview {
-    ScrollCard(
-        movie: MovieModel(
-            id: 1,
-            title: "Godzilla vs. Kong",
-            overview: "In a time when monsters walk the Earth, humanity’s fight for its future sets Godzilla and Kong on a collision course that will see the two most powerful forces of nature on the planet collide in a spectacular battle for the ages.",
-            posterPath: "https://image.tmdb.org/t/p/original/pgqgaUx1cJb5oZQQ5v0tNARCeBp.jpg",
-            releaseDate: "2023-10-06",
-            voteAverage: 8.3,
-            voteCount: 4719,
-            popularity: 5389.258,
-            adult: false,
-            genreIds: [1, 2, 3],
-            originalLanguage: "en"
-        ), cardType: .trailer, cardHeight: 120, cardWidth: 200
-    )
-}
+//#Preview {
+//    ScrollCard(
+//        movie: MovieModel(
+//            id: 1,
+//            title: "Godzilla vs. Kong",
+//            overview: "In a time when monsters walk the Earth, humanity’s fight for its future sets Godzilla and Kong on a collision course that will see the two most powerful forces of nature on the planet collide in a spectacular battle for the ages.",
+//            posterPath: "https://image.tmdb.org/t/p/original/pgqgaUx1cJb5oZQQ5v0tNARCeBp.jpg",
+//            releaseDate: "2023-10-06",
+//            voteAverage: 8.3,
+//            voteCount: 4719,
+//            popularity: 5389.258,
+//            adult: false,
+//            genreIds: [1, 2, 3],
+//            originalLanguage: "en"
+//        ), cardType: .trailer, cardHeight: 120, cardWidth: 200
+//    )
+//}
 
