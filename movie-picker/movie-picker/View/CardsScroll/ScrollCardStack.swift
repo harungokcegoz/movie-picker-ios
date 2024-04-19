@@ -3,11 +3,20 @@ import SwiftUI
 struct ScrollCardStack: View {
     let categoryName: String
     let cardStackType: CardStackType
+    let isRankingNeeded: Bool
     
     private let cardHeight: CGFloat = 210
     private let cardWidth: CGFloat = 150
+    private var rankingNumberCount: Int = 0
     
     @ObservedObject var viewModel: MovieViewModel
+    
+    init(categoryName: String, cardStackType: CardStackType, isRankingNeeded: Bool, viewModel: MovieViewModel) {
+        self.categoryName = categoryName
+        self.cardStackType = cardStackType
+        self.isRankingNeeded = isRankingNeeded
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         VStack {
@@ -41,21 +50,19 @@ extension ScrollCardStack {
     private var cardScroll: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(alignment: .top, spacing: 10) {
-                ForEach(viewModel.movies) { movie in
+                ForEach(Array(viewModel.movies.enumerated()), id: \.offset) { index, movie in
                     VStack {
                         switch cardStackType {
                         case .trailer:
-                            ScrollCard(movie: movie, cardType: .trailer, cardHeight: cardHeight, cardWidth: cardWidth)
+                            ScrollCard(movie: movie, cardType: .trailer, cardHeight: cardHeight, cardWidth: cardWidth, isRankingNeeded: isRankingNeeded, rankNumber: index + 1)
                         case .movie:
-                            ScrollCard(movie: movie, cardType: .movie, cardHeight: cardHeight, cardWidth: cardWidth)
+                            ScrollCard(movie: movie, cardType: .movie, cardHeight: cardHeight, cardWidth: cardWidth, isRankingNeeded: isRankingNeeded, rankNumber: index + 1)
                         }
                         Spacer()
                     }
-                    .frame(width: cardWidth, height: cardHeight * 1.5)
-                    .sheet(item: $viewModel.sheetMovie, onDismiss: nil){
-                        movie in
+                    .sheet(item: $viewModel.sheetMovie, onDismiss: nil) { movie in
                         if cardStackType == .trailer {
-                            YouTubeSheet(videoURL: "https://www.youtube.com/watch?v=1ZdlAg3j8nI" , vm: viewModel, movie: movie)
+                            YouTubeSheet(videoURL: "https://www.youtube.com/watch?v=1ZdlAg3j8nI", vm: viewModel, movie: movie)
                         } else {
                             ScrollCardDetailView(movie: movie, vm: viewModel)
                         }
@@ -68,6 +75,7 @@ extension ScrollCardStack {
             .padding(.horizontal)
         }
     }
+
 }
 
 //#Preview {

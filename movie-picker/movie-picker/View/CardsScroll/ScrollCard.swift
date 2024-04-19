@@ -6,7 +6,9 @@ struct ScrollCard: View {
     let cardType: CardType
     let cardHeight: CGFloat
     let cardWidth: CGFloat
-        
+    let isRankingNeeded: Bool
+    let rankNumber: Int
+    
     var body: some View {
         switch cardType {
         case .trailer:
@@ -40,15 +42,38 @@ extension ScrollCard {
             date
             title
         }
+        .frame(width: cardWidth, height: cardHeight * 1.5)
     }
     
     private var movieCard: some View {
-        VStack {
-            posterImage(movie: movie, width: cardWidth, height: cardHeight)
-            dateAndRate
-            title
-            Spacer()
+        ZStack(alignment: .bottomLeading) {
+            VStack {
+                posterImage(movie: movie, width: cardWidth, height: cardHeight)
+                VStack {
+                    dateAndRate
+                    title
+                }
+                Spacer()
+            }
+            HStack {
+                ZStack {
+                    Text(String(rankNumber))
+                        .font(.custom("Cochin", size: 80))
+                        .foregroundColor(.iconOrange)
+                        .padding(.bottom, 50)
+                        .zIndex(1)
+                    Text(String(rankNumber))
+                        .font(.custom("Cochin", size: 80))
+                        .foregroundColor(.red)
+                        .offset( x: 2, y: -1)
+                        .padding(.bottom, 50)
+            
+                }
+                .opacity(isRankingNeeded ? 1 : 0)
+                Spacer()
+            }
         }
+        .frame(width: isRankingNeeded ? cardWidth + 40 : cardWidth, height: cardHeight * 1.4)
     }
     
     private var date: some View {
@@ -68,6 +93,7 @@ extension ScrollCard {
     
     private var dateAndRate: some View {
         HStack {
+            Spacer()
             Image(systemName: "star.fill")
                 .resizable()
                 .frame(width: 12, height: 12)
@@ -83,8 +109,9 @@ extension ScrollCard {
             Text(getYear(movie: movie))
                 .font(.custom("SFProRounded-Regular", size: 13))
                 .foregroundColor(.white)
+            Spacer()
         }
-        .padding(.top, 2)
+        .padding(.top, 10)
         .padding(.horizontal, 5)
     }
     

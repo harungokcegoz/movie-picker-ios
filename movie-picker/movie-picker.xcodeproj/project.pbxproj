@@ -42,6 +42,7 @@
 		4A9980902BC5F7FE0017E183 /* PersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A99808F2BC5F7FE0017E183 /* PersonView.swift */; };
 		4A9980932BC60A4F0017E183 /* MockData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A9980922BC60A4F0017E183 /* MockData.json */; };
 		4AC0F80E2BD2EC310063CDFE /* YouTubeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC0F80D2BD2EC310063CDFE /* YouTubeSheet.swift */; };
+		4AC0F8102BD308230063CDFE /* Cochin.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4AC0F80F2BD308230063CDFE /* Cochin.ttc */; };
 		4AE1B2232BCC7F3200B56040 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE1B2222BCC7F3200B56040 /* Header.swift */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +102,7 @@
 		4A99808F2BC5F7FE0017E183 /* PersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonView.swift; sourceTree = "<group>"; };
 		4A9980922BC60A4F0017E183 /* MockData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockData.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		4AC0F80D2BD2EC310063CDFE /* YouTubeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeSheet.swift; sourceTree = "<group>"; };
+		4AC0F80F2BD308230063CDFE /* Cochin.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cochin.ttc; sourceTree = "<group>"; };
 		4AE1B2222BCC7F3200B56040 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -263,6 +265,7 @@
 		4A803A302BCEBCFD007B7AD1 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				4AC0F80F2BD308230063CDFE /* Cochin.ttc */,
 				4A803B0A2BCEC286007B7AD1 /* SF-Pro-Rounded-Black.otf */,
 				4A803B092BCEC286007B7AD1 /* SF-Pro-Rounded-Bold.otf */,
 				4A803B0D2BCEC286007B7AD1 /* SF-Pro-Rounded-Heavy.otf */,
@@ -415,6 +418,7 @@
 			files = (
 				4A3DEB6E2BBC339C0004BECE /* Preview Assets.xcassets in Resources */,
 				4A803B122BCEC286007B7AD1 /* SF-Pro-Rounded-Bold.otf in Resources */,
+				4AC0F8102BD308230063CDFE /* Cochin.ttc in Resources */,
 				4A803B162BCEC286007B7AD1 /* SF-Pro-Rounded-Heavy.otf in Resources */,
 				4A3DEB6B2BBC339C0004BECE /* Assets.xcassets in Resources */,
 				4A9980932BC60A4F0017E183 /* MockData.json in Resources */,
