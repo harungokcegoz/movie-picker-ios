@@ -22,6 +22,7 @@
 		4A69952A2BD1A3490088CE3D /* ScrollCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6995292BD1A3490088CE3D /* ScrollCard.swift */; };
 		4A69952F2BD1C6900088CE3D /* ScrollCardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69952E2BD1C6900088CE3D /* ScrollCardDetailView.swift */; };
 		4A6995342BD1DBD70088CE3D /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6995332BD1DBD70088CE3D /* SplashScreenView.swift */; };
+		4A6995372BD2737E0088CE3D /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4A6995362BD2737E0088CE3D /* YouTubePlayerKit */; };
 		4A78E1252BC5E6B200F51BCC /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A78E1242BC5E6B200F51BCC /* CustomTabBar.swift */; };
 		4A78E1282BC5ED1900F51BCC /* ShuffleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A78E1272BC5ED1900F51BCC /* ShuffleView.swift */; };
 		4A78E12A2BC5F2B700F51BCC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A78E1292BC5F2B700F51BCC /* ContentView.swift */; };
@@ -106,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A6995372BD2737E0088CE3D /* YouTubePlayerKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +316,9 @@
 			dependencies = (
 			);
 			name = "movie-picker";
+			packageProductDependencies = (
+				4A6995362BD2737E0088CE3D /* YouTubePlayerKit */,
+			);
 			productName = "movie-picker";
 			productReference = 4A3DEB632BBC339A0004BECE /* movie-picker.app */;
 			productType = "com.apple.product-type.application";
@@ -386,6 +391,9 @@
 				Base,
 			);
 			mainGroup = 4A3DEB5A2BBC339A0004BECE;
+			packageReferences = (
+				4A6995352BD2737E0088CE3D /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
+			);
 			productRefGroup = 4A3DEB642BBC339A0004BECE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -790,6 +798,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4A6995352BD2737E0088CE3D /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SvenTiigi/YouTubePlayerKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4A6995362BD2737E0088CE3D /* YouTubePlayerKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A6995352BD2737E0088CE3D /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
+			productName = YouTubePlayerKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4A3DEB5B2BBC339A0004BECE /* Project object */;
 }
