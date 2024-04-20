@@ -43,6 +43,7 @@
 		4A9980932BC60A4F0017E183 /* MockData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A9980922BC60A4F0017E183 /* MockData.json */; };
 		4A9C032A2BD3E29000E47D5E /* Phosphate.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4A9C03292BD3E28F00E47D5E /* Phosphate.ttc */; };
 		4A9C032C2BD3E3C200E47D5E /* Impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A9C032B2BD3E3C200E47D5E /* Impact.ttf */; };
+		4A9C032E2BD3EB4700E47D5E /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9C032D2BD3EB4700E47D5E /* SideMenu.swift */; };
 		4AC0F80E2BD2EC310063CDFE /* YouTubeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC0F80D2BD2EC310063CDFE /* YouTubeSheet.swift */; };
 		4AC0F8102BD308230063CDFE /* Cochin.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4AC0F80F2BD308230063CDFE /* Cochin.ttc */; };
 		4AE1B2232BCC7F3200B56040 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE1B2222BCC7F3200B56040 /* Header.swift */; };
@@ -105,6 +106,7 @@
 		4A9980922BC60A4F0017E183 /* MockData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockData.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		4A9C03292BD3E28F00E47D5E /* Phosphate.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Phosphate.ttc; sourceTree = "<group>"; };
 		4A9C032B2BD3E3C200E47D5E /* Impact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Impact.ttf; sourceTree = "<group>"; };
+		4A9C032D2BD3EB4700E47D5E /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		4AC0F80D2BD2EC310063CDFE /* YouTubeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeSheet.swift; sourceTree = "<group>"; };
 		4AC0F80F2BD308230063CDFE /* Cochin.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cochin.ttc; sourceTree = "<group>"; };
 		4AE1B2222BCC7F3200B56040 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 		4A3DEB972BBC47580004BECE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4A9C032F2BD3EB5000E47D5E /* SideMenu */,
 				4A6995252BD196B00088CE3D /* CardsScroll */,
 				4A78E1292BC5F2B700F51BCC /* ContentView.swift */,
 				4A073AD32BCDCF8200492C5B /* Atoms */,
@@ -302,6 +305,14 @@
 				4A9980922BC60A4F0017E183 /* MockData.json */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		4A9C032F2BD3EB5000E47D5E /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				4A9C032D2BD3EB4700E47D5E /* SideMenu.swift */,
+			);
+			path = SideMenu;
 			sourceTree = "<group>";
 		};
 		4AE1B2212BCC7F2400B56040 /* Header */ = {
@@ -464,6 +475,7 @@
 				4A6995282BD196F70088CE3D /* ScrollCardStack.swift in Sources */,
 				4A69952A2BD1A3490088CE3D /* ScrollCard.swift in Sources */,
 				4AE1B2232BCC7F3200B56040 /* Header.swift in Sources */,
+				4A9C032E2BD3EB4700E47D5E /* SideMenu.swift in Sources */,
 				4A3DEB942BBC40660004BECE /* MovieModel.swift in Sources */,
 				4A803B182BCEE3E5007B7AD1 /* MovieCardBackView.swift in Sources */,
 				4A69952F2BD1C6900088CE3D /* ScrollCardDetailView.swift in Sources */,
