@@ -58,13 +58,13 @@ extension ScrollCard {
             HStack {
                 ZStack {
                     Text(String(rankNumber))
-                        .font(.custom("Cochin", size: 80))
-                        .foregroundColor(.iconOrange)
+                        .font(.custom("Impact", size: 80))
+                        .foregroundColor(.imdbYellow)
                         .padding(.bottom, 50)
                         .zIndex(1)
                     Text(String(rankNumber))
-                        .font(.custom("Cochin", size: 80))
-                        .foregroundColor(.red)
+                        .font(.custom("Impact", size: 80))
+                        .foregroundColor(.red.opacity(0.8))
                         .offset( x: 2, y: -1)
                         .padding(.bottom, 50)
             
