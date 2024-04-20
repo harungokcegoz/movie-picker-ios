@@ -50,7 +50,7 @@ private extension SideMenu {
                     
                     Text(mood.text)
                         .font(.custom("SFProRounded-Regular", size: 16))
-                        .foregroundColor(isSelected ? .yellow : .white)
+                        .foregroundColor(isSelected ? .imdbYellow : .white)
                         .padding(.horizontal, 5)
                         .padding(.vertical, 8)
                         .cornerRadius(8)
@@ -80,10 +80,9 @@ private extension SideMenu {
                 Circle()
                     .stroke(Color.iconOrange, lineWidth: isSelected ? 2 : 1)
                     .frame(width: 35, height: 35)
-                    .foregroundColor(.iconOrange)
                     .scaleEffect(isSelected ? 0.9 : 0.7)
                 Text(mood.icon)
-                    .font(.custom("SFProRounded-Bold", size: 13))
+                    .font(.custom("SFProRounded-Bold", size: 15))
                     .foregroundColor(.iconOrange)
                     .opacity(isSelected ? 1 : 0)
             }
