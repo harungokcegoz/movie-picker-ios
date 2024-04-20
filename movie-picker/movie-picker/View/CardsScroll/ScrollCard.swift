@@ -42,7 +42,7 @@ extension ScrollCard {
             date
             title
         }
-        .frame(width: cardWidth, height: cardHeight * 1.5)
+        .frame(width: cardWidth, height: cardHeight * 1.4)
     }
     
     private var movieCard: some View {
@@ -65,9 +65,8 @@ extension ScrollCard {
                     Text(String(rankNumber))
                         .font(.custom("Impact", size: 80))
                         .foregroundColor(.red.opacity(0.8))
-                        .offset( x: 2, y: -1)
+                        .offset( x: 3, y: -1)
                         .padding(.bottom, 50)
-            
                 }
                 .opacity(isRankingNeeded ? 1 : 0)
                 Spacer()

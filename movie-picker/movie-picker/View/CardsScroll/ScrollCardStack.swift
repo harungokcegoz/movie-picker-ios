@@ -20,8 +20,11 @@ struct ScrollCardStack: View {
     
     var body: some View {
         VStack {
-            categorySpan
-            cardScroll
+            VStack {
+                categorySpan
+                cardScroll
+            }
+            .padding(.vertical, 10)
         }
         .onAppear {
             Task {
@@ -39,9 +42,16 @@ extension ScrollCardStack {
     
     private var categorySpan: some View {
         HStack {
-            Text(categoryName)
-                .font(Font.custom("SFProRounded-Bold", size: 20))
+            ZStack {
+                Text(categoryName)
+                    .font(Font.custom("SFProRounded-Black", size: 20))
                 .foregroundColor(.iconOrange)
+                .zIndex(1)
+                Text(categoryName)
+                    .font(Font.custom("SFProRounded-Black", size: 20))
+                    .foregroundColor(.red.opacity(0.7))
+                .offset( x: 1, y: -1)
+            }
             Spacer()
         }
         .padding(.leading)
