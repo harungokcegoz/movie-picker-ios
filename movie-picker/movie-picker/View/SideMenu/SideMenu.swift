@@ -2,9 +2,16 @@ import SwiftUI
 
 struct SideMenu: View {
     @State private var selectedMood: MenuItem? = menuItems.first
+    @ObservedObject var vm: MovieViewModel
     
     var body: some View {
+        
         VStack(alignment: .leading) {
+            HStack {
+                Spacer()
+                CloseButton()
+            }
+            
             HeaderView()
             
             Divider()
@@ -22,6 +29,7 @@ struct SideMenu: View {
         }
         .menuStyle()
     }
+    
 }
 
 // MARK: - Subviews
@@ -34,7 +42,7 @@ private extension SideMenu {
                     .font(.custom("SFProRounded-Bold", size: 23))
                     .foregroundColor(.white)
                     .padding(.horizontal)
-                    .padding(.top, 100)
+                    .padding(.top, 20)
             }
         }
     }
@@ -79,14 +87,33 @@ private extension SideMenu {
             ZStack {
                 Circle()
                     .stroke(Color.iconOrange, lineWidth: isSelected ? 2 : 1)
-                    .frame(width: 35, height: 35)
-                    .scaleEffect(isSelected ? 0.9 : 0.7)
+                    .frame(width: 25, height: 25)
+                    .opacity(isSelected ? 0 : 1)
                 Text(mood.icon)
-                    .font(.custom("SFProRounded-Bold", size: 15))
+                    .font(.custom("SFProRounded-Bold", size: 25))
                     .foregroundColor(.iconOrange)
                     .opacity(isSelected ? 1 : 0)
             }
         }
+    }
+    
+    func CloseButton() -> some View {
+        Button(action: {
+            withAnimation(.easeIn) {
+                vm.isSideMenuOpen.toggle()
+
+            }
+        }) {
+            Image(systemName: "xmark")
+                .font(.headline)
+                .padding(16)
+                .foregroundColor(.black)
+                .background(.imdbYellow)
+                .cornerRadius(20)
+                .shadow(radius: 4)
+                .padding()
+        }
+       
     }
 }
 
@@ -95,8 +122,8 @@ private extension SideMenu {
 private extension View {
     func menuStyle() -> some View {
         self
-            .frame(maxWidth: 288, maxHeight: .infinity)
-            .background(.bgBlack)
+            .frame(maxWidth: 288, maxHeight: 700)
+            .background(.bgBlack.opacity(0.5))
             .cornerRadius(16)
             .frame(maxWidth: .infinity, alignment: .leading)
     }
@@ -131,6 +158,6 @@ enum SelectedMenu: String {
 
 struct SideMenu_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenu()
+        SideMenu(vm: MovieViewModel())
     }
 }
