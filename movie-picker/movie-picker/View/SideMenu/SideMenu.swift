@@ -3,6 +3,7 @@ import SwiftUI
 struct SideMenu: View {
     @State private var selectedMood: MenuItem? = menuItems.first
     @ObservedObject var vm: MovieViewModel
+    @State private var dragOffset: CGFloat = 0
     
     var body: some View {
         
@@ -11,6 +12,7 @@ struct SideMenu: View {
                 Spacer()
                 CloseButton()
             }
+            
             
             HeaderView()
             
@@ -28,6 +30,21 @@ struct SideMenu: View {
             Spacer()
         }
         .menuStyle()
+        // Dragging left to close the menu
+        .gesture(
+            DragGesture()
+                .onChanged { value in
+                    dragOffset = value.translation.width
+                }
+                .onEnded { value in
+                    if dragOffset < -100 {
+                        withAnimation(.easeOut(duration: 0.2)) {
+                            vm.isSideMenuOpen.toggle()
+                        }
+                    }
+                    dragOffset = 0
+                }
+        )
     }
     
 }
@@ -99,9 +116,9 @@ private extension SideMenu {
     
     func CloseButton() -> some View {
         Button(action: {
-            withAnimation(.easeIn) {
+            withAnimation(.easeIn(duration: 0.2)) {
                 vm.isSideMenuOpen.toggle()
-
+                
             }
         }) {
             Image(systemName: "xmark")
@@ -113,7 +130,7 @@ private extension SideMenu {
                 .shadow(radius: 4)
                 .padding()
         }
-       
+        
     }
 }
 
@@ -143,7 +160,7 @@ var menuItems = [
     MenuItem(text: "LOVE LOVE LOVE 777", icon: "🧡", menu: .love),
     MenuItem(text: "Wanna Cry", icon: "😢", menu: .cry),
     MenuItem(text: "Something Real", icon: "💪", menu: .biography),
-    MenuItem(text: "Anything can't scare me", icon: "😬", menu: .horror)
+    MenuItem(text: "Nothing can scare me", icon: "😬", menu: .horror)
 ]
 
 enum SelectedMenu: String {
