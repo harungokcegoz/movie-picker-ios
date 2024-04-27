@@ -15,10 +15,13 @@ struct Header: View {
                     .padding(.leading, 40)
                 Spacer()
             }
-            Divider()
-                .frame(height: 1)
-                .background(.gray.opacity(0.3))
         }
+        .overlay(
+            Rectangle()
+                .frame(height: 1)
+                .foregroundColor(.gray.opacity(0.5))
+                .padding(.top, 70)
+        )
     }
 }
 
