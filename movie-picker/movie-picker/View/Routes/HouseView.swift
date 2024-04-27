@@ -84,12 +84,12 @@ struct TabBarView: View {
                 
             })
         }
-        .frame(width: 200, height: 30)
+        .frame(width: 160, height: 30)
         .edgesIgnoringSafeArea(.all)
         .overlay {
             RoundedRectangle(cornerRadius: 30)
                 .stroke(Color.gray.opacity(0.5), lineWidth: 2)
-                .frame(width: 200, height: 40)
+                .frame(width: 160, height: 40)
         }
         .padding(.horizontal)
         .padding(.top, 20)
@@ -111,14 +111,14 @@ struct TabBarItem: View {
         } label: {
             ZStack {
                 Text(tabBarItemName)
-                    .font(Font.custom(currentTab == tab ? "SFProRounded-Regular" : "SFProRounded-Light", size: 17))
+                    .font(Font.custom(currentTab == tab ? "SFProRounded-Regular" : "SFProRounded-Light", size: 13))
                     .zIndex(1)
                     .foregroundColor(currentTab == tab ? .black : .gray)
                     .scaleEffect(currentTab == tab ? 1.2 : 1)
                 if currentTab == tab {
                     RoundedRectangle(cornerRadius: 30)
                         .fill(.imdbYellow)
-                        .frame(width: 100, height: 40)
+                        .frame(width: 80, height: 40)
                 } else {
                     Color.clear.frame(height: 2)
                 }
