@@ -11,20 +11,20 @@ private enum NetworkError: Error {
 class WebService {
     func downloadData(url: URL, headers: [String: String]) async throws -> [MovieModel]? {
         do {
-//            var request = URLRequest(url: url)
-//            request.httpMethod = "GET"
-//            request.allHTTPHeaderFields = headers
-//
-//            let (data, response) = try await URLSession.shared.data(for: request)
-//            guard let httpResponse = response as? HTTPURLResponse else {
-//                throw NetworkError.badResponse
-//            }
-//
-//            guard (200..<300).contains(httpResponse.statusCode) else {
-//                throw NetworkError.badStatus
-//            }
+            //            var request = URLRequest(url: url)
+            //            request.httpMethod = "GET"
+            //            request.allHTTPHeaderFields = headers
+            //
+            //            let (data, response) = try await URLSession.shared.data(for: request)
+            //            guard let httpResponse = response as? HTTPURLResponse else {
+            //                throw NetworkError.badResponse
+            //            }
+            //
+            //            guard (200..<300).contains(httpResponse.statusCode) else {
+            //                throw NetworkError.badStatus
+            //            }
             // Mock response
-//            let decodedResponse = try JSONDecoder().decode(MovieResponse.self, from: mockResponse)
+            //            let decodedResponse = try JSONDecoder().decode(MovieResponse.self, from: mockResponse)
             
             let decodedResponse = Bundle.main.decode(type: MovieResponse.self, from: "MockData.json")
             return decodedResponse.results
@@ -74,7 +74,7 @@ class MovieViewModel: ObservableObject {
         "X-RapidAPI-Key": "2285790515msh8e72398585d3ec8p1858ddjsnf22bb78122aa",
         "X-RapidAPI-Host": "advanced-movie-search.p.rapidapi.com"
     ]
-
+    
     let url = URL(string: "https://advanced-movie-search.p.rapidapi.com/search/movie?query=kong&page=1")!
     
     func fetchMovies() async {

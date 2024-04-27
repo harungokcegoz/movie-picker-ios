@@ -15,12 +15,16 @@ struct ContentView: View {
                 .ignoresSafeArea()
             SideMenu(vm: self.vm)
                 .opacity(vm.isSideMenuOpen ? 1 : 0)
-            
             ZStack{
                 Color(.bgBlack)
-                PageView()
+                pageView()
             }
-            .menuStyle(vm: vm.self)
+            .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
+            .rotation3DEffect(
+                .degrees(30),
+                axis: (x: 0.0, y: vm.isSideMenuOpen ? -1 : 0, z: 0.0)
+            )
+            .offset(x: vm.isSideMenuOpen ? 280 : 0)
         }
         .edgesIgnoringSafeArea(.all)
     }
@@ -28,12 +32,12 @@ struct ContentView: View {
 
 extension ContentView {
     @ViewBuilder
-    func PageView() -> some View {
+    func pageView() -> some View {
         VStack {
             Header(vm: self.vm)
                 .zIndex(1)
                 .padding(.top, 55)
-            
+         
             switch tabSelected {
             case .house:
                 HouseView()
@@ -56,17 +60,6 @@ extension ContentView {
     }
 }
 
-private extension View {
-    func menuStyle(vm: MovieViewModel) -> some View {
-        self
-            .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
-            .rotation3DEffect(
-                .degrees(30),
-                axis: (x: 0.0, y: vm.isSideMenuOpen ? -1 : 0, z: 0.0)
-            )
-            .offset(x: vm.isSideMenuOpen ? 280 : 0)
-    }
-}
 
 #Preview {
     ContentView()
