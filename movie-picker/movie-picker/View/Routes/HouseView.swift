@@ -105,7 +105,7 @@ struct TabBarItem: View {
     
     var body: some View {
         Button {
-            withAnimation(.easeIn(duration: 0.3)){
+            withAnimation(.spring(duration: 0.7)){
                 self.currentTab = tab
             }
         } label: {
@@ -118,9 +118,7 @@ struct TabBarItem: View {
                 if currentTab == tab {
                     RoundedRectangle(cornerRadius: 30)
                         .fill(.imdbYellow)
-                        .frame(width: 105, height: 40)
-                       
-        
+                        .frame(width: 100, height: 40)
                 } else {
                     Color.clear.frame(height: 2)
                 }
