@@ -1,7 +1,6 @@
 An iOS app that recommends movies and series based on the user's mood. My goal is to utilize modern UI design principles to provide the best user experience, incorporating sleek designs, animations, and practical features like Tinder alike swiping behavior.
 
 Since the application is still in its early development phase, there may be some mock data and broken/not ideal implementations.
-I am currently developing an iOS app for the Apple App Store that recommends movies and series based on the user's mood. My goal is to utilize modern UI design principles to provide the best user experience, incorporating sleek designs, animations, and practical features like Tinder alike swiping behavior. Since the application is still in its early development phase, there may be some mock data and broken/not ideal implementations.
 
 Some screens:
 
